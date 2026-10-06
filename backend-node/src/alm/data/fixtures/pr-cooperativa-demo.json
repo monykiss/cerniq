@@ -1,0 +1,162 @@
+{
+  "$schema": "./_schema.ts#InstitutionFixture",
+  "seedKey": "pr-cooperativa-demo",
+  "name": "CoopAhorro San Juan",
+  "type": "cooperativa",
+  "totalAssets": 250,
+  "currency": "USD",
+  "reportingDate": "2026-01-31",
+  "primaryRegulator": "COSSEC",
+  "fiscalYearEnd": "december",
+  "preferredLanguage": "es",
+  "items": [
+    {
+      "category": "asset",
+      "subcategory": "consumer_loans",
+      "name": "Préstamos Auto y Personal",
+      "balance": 75,
+      "rate": 8.5,
+      "duration": 3.0,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "residential_mortgages",
+      "name": "Préstamos Hipotecarios",
+      "balance": 90,
+      "rate": 6.25,
+      "duration": 12.0,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "commercial_loans",
+      "name": "Préstamos Comerciales",
+      "balance": 25,
+      "rate": 9.0,
+      "duration": 2.0,
+      "rateType": "variable"
+    },
+    {
+      "category": "asset",
+      "subcategory": "investment_securities",
+      "name": "Bonos e Inversiones",
+      "balance": 40,
+      "rate": 4.5,
+      "duration": 3.5,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "cash_equivalents",
+      "name": "Efectivo y Equivalentes",
+      "balance": 20,
+      "rate": 5.25,
+      "duration": 0.1,
+      "rateType": "variable"
+    },
+    {
+      "category": "liability",
+      "subcategory": "savings_deposits",
+      "name": "Ahorros de Socios",
+      "balance": 85,
+      "rate": 1.75,
+      "duration": 0.3,
+      "rateType": "variable",
+      "depositBeta": 0.35
+    },
+    {
+      "category": "liability",
+      "subcategory": "time_deposits",
+      "name": "Certificados de Acción",
+      "balance": 55,
+      "rate": 4.5,
+      "duration": 1.2,
+      "rateType": "fixed"
+    },
+    {
+      "category": "liability",
+      "subcategory": "demand_deposits",
+      "name": "Cuentas Corrientes",
+      "balance": 35,
+      "rate": 0.25,
+      "duration": 0.1,
+      "rateType": "variable",
+      "depositBeta": 0.15
+    },
+    {
+      "category": "liability",
+      "subcategory": "borrowings",
+      "name": "Préstamos FHLB",
+      "balance": 30,
+      "rate": 5.5,
+      "duration": 2.0,
+      "rateType": "fixed"
+    },
+    {
+      "category": "liability",
+      "subcategory": "time_deposits",
+      "name": "Depósitos a Plazo",
+      "balance": 20,
+      "rate": 3.8,
+      "duration": 0.8,
+      "rateType": "fixed"
+    }
+  ],
+  "liquidity": {
+    "date": "2026-01-31",
+    "hqlaLevel1": 18,
+    "hqlaLevel2": 5,
+    "cashOutflows": 19.5,
+    "cashInflows": 0,
+    "lcr": 117.9,
+    "nsfr": 109.0
+  },
+  "loanSegments": [
+    {
+      "segmentName": "Préstamos Personales",
+      "balance": 40,
+      "weightedAvgRate": 0.092,
+      "weightedAvgMaturity": 3.5,
+      "historicalLossRate": 0.022,
+      "lgd": 0.6,
+      "qualitativeAdj": 0.002
+    },
+    {
+      "segmentName": "Préstamos de Auto",
+      "balance": 35,
+      "weightedAvgRate": 0.068,
+      "weightedAvgMaturity": 4.5,
+      "historicalLossRate": 0.012,
+      "lgd": 0.45,
+      "qualitativeAdj": 0.001
+    },
+    {
+      "segmentName": "Hipotecas Residenciales",
+      "balance": 90,
+      "weightedAvgRate": 0.055,
+      "weightedAvgMaturity": 18,
+      "historicalLossRate": 0.008,
+      "lgd": 0.35,
+      "qualitativeAdj": 0
+    },
+    {
+      "segmentName": "Préstamos Comerciales (MBL)",
+      "balance": 25,
+      "weightedAvgRate": 0.071,
+      "weightedAvgMaturity": 6,
+      "historicalLossRate": 0.015,
+      "lgd": 0.45,
+      "qualitativeAdj": 0.003
+    },
+    {
+      "segmentName": "Préstamos con Garantía de Acciones",
+      "balance": 10,
+      "weightedAvgRate": 0.06,
+      "weightedAvgMaturity": 2,
+      "historicalLossRate": 0.003,
+      "lgd": 0.05,
+      "qualitativeAdj": 0
+    }
+  ]
+}

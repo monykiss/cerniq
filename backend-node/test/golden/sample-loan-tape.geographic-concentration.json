@@ -1,0 +1,109 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-06-30",
+  "totalBalance": 773000,
+  "municipio": {
+    "coveragePct": 97.67,
+    "hhi": 3763.4,
+    "hhiInterpretation": "highly_concentrated",
+    "largestSharePct": 52.72,
+    "distinctMunicipios": 4,
+    "exposures": [
+      {
+        "municipio": "Caguas",
+        "balance": 398000,
+        "sharePct": 52.72,
+        "loanCount": 5
+      },
+      {
+        "municipio": "San Juan",
+        "balance": 189000,
+        "sharePct": 25.03,
+        "loanCount": 2
+      },
+      {
+        "municipio": "Ponce",
+        "balance": 140000,
+        "sharePct": 18.54,
+        "loanCount": 1
+      },
+      {
+        "municipio": "Bayamon",
+        "balance": 28000,
+        "sharePct": 3.71,
+        "loanCount": 1
+      }
+    ],
+    "truncated": false
+  },
+  "singleBorrower": {
+    "coveragePct": 97.15,
+    "largestSharePct": 45.94,
+    "distinctBorrowers": 7,
+    "exposures": [
+      {
+        "borrowerId": "S-100",
+        "balance": 345000,
+        "sharePct": 45.94,
+        "loanCount": 3
+      },
+      {
+        "borrowerId": "S-101",
+        "balance": 165000,
+        "sharePct": 21.97,
+        "loanCount": 1
+      },
+      {
+        "borrowerId": "S-102",
+        "balance": 140000,
+        "sharePct": 18.64,
+        "loanCount": 1
+      },
+      {
+        "borrowerId": "S-106",
+        "balance": 31000,
+        "sharePct": 4.13,
+        "loanCount": 1
+      },
+      {
+        "borrowerId": "S-104",
+        "balance": 28000,
+        "sharePct": 3.73,
+        "loanCount": 1
+      },
+      {
+        "borrowerId": "S-105",
+        "balance": 24000,
+        "sharePct": 3.2,
+        "loanCount": 1
+      },
+      {
+        "borrowerId": "S-103",
+        "balance": 18000,
+        "sharePct": 2.4,
+        "loanCount": 1
+      }
+    ],
+    "truncated": false
+  },
+  "gaps": [
+    {
+      "field": "concentration.municipio.coverage",
+      "reason": "LOAN_TAPE_FIELD_MISSING",
+      "severity": "WARNING",
+      "action": "El municipio cubre el 97.67% del balance — el HHI y las participaciones se calculan solo sobre esa porción (nunca se imputa). / Municipio covers 97.67% of balance — HHI and shares are computed over that portion only (never imputed).",
+      "context": {
+        "coveragePct": 97.67
+      }
+    },
+    {
+      "field": "concentration.singleBorrower.coverage",
+      "reason": "LOAN_TAPE_FIELD_MISSING",
+      "severity": "WARNING",
+      "action": "La clave de deudor cubre el 97.15% del balance — la participación por deudor se calcula solo sobre esa porción. / Borrower key covers 97.15% of balance — single-borrower shares are computed over that portion only.",
+      "context": {
+        "coveragePct": 97.15
+      }
+    }
+  ]
+}

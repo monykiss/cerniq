@@ -1,0 +1,70 @@
+{
+  "scenarios": [
+    {
+      "name": "-300bps",
+      "shiftBps": -300,
+      "niImpact": -0.24,
+      "niImpactPct": -2.28,
+      "mveImpact": 32.33,
+      "mveImpactPct": 129.9
+    },
+    {
+      "name": "-200bps",
+      "shiftBps": -200,
+      "niImpact": -0.13,
+      "niImpactPct": -1.25,
+      "mveImpact": 20.32,
+      "mveImpactPct": 81.65
+    },
+    {
+      "name": "-100bps",
+      "shiftBps": -100,
+      "niImpact": -0.02,
+      "niImpactPct": -0.21,
+      "mveImpact": 9.62,
+      "mveImpactPct": 38.64
+    },
+    {
+      "name": "-50bps",
+      "shiftBps": -50,
+      "niImpact": 0.02,
+      "niImpactPct": 0.14,
+      "mveImpact": 4.68,
+      "mveImpactPct": 18.8
+    },
+    {
+      "name": "+50bps",
+      "shiftBps": 50,
+      "niImpact": -0.01,
+      "niImpactPct": -0.14,
+      "mveImpact": -4.43,
+      "mveImpactPct": -17.8
+    },
+    {
+      "name": "+100bps",
+      "shiftBps": 100,
+      "niImpact": -0.03,
+      "niImpactPct": -0.28,
+      "mveImpact": -8.65,
+      "mveImpactPct": -34.76
+    },
+    {
+      "name": "+200bps",
+      "shiftBps": 200,
+      "niImpact": -0.06,
+      "niImpactPct": -0.56,
+      "mveImpact": -16.5,
+      "mveImpactPct": -66.3
+    },
+    {
+      "name": "+300bps",
+      "shiftBps": 300,
+      "niImpact": -0.09,
+      "niImpactPct": -0.85,
+      "mveImpact": -23.64,
+      "mveImpactPct": -94.98
+    }
+  ],
+  "baseNII": 10.64,
+  "riskRating": "low"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "alm-010",
+  "name": "Bilingual PR cooperativa (EN + ES mandatory)",
+  "agentId": "ALM_DECISION",
+  "description": "Puerto Rico-domiciled cooperativa. Language must be 'bilingual'. Both finding/findingEs and action/actionEs must be populated. COSSEC regulatory refs required. This case gates bilingual completeness (10% weight).",
+  "input": {
+    "balanceSheetId": "golden-010",
+    "institutionId": "golden-inst-003",
+    "language": "bilingual"
+  },
+  "expectedFindings": {
+    "topRiskDomain": "Interest Rate Risk",
+    "healthScoreRange": [55, 75],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "runRateShock"],
+    "requiresBilingual": true
+  }
+}

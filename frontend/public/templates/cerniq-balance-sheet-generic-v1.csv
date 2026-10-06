@@ -1,0 +1,9 @@
+category,subcategory,name,balance,rate,duration,rateType
+asset,commercial_loans,Commercial Real Estate,350,5.25,4.5,fixed
+asset,residential_mortgages,30yr Fixed Mortgages,280,4.75,6.2,fixed
+asset,investment_securities,Treasury Notes,120,4.10,2.8,fixed
+asset,cash_equivalents,Cash & Fed Funds,80,5.30,0.1,variable
+liability,demand_deposits,Checking Accounts,200,0.50,0.1,variable
+liability,savings_deposits,Money Market,150,3.80,0.3,variable
+liability,time_deposits,12-Month CDs,180,4.00,0.9,fixed
+liability,borrowings,FHLB Advances,100,4.50,1.5,fixed

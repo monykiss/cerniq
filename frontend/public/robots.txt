@@ -1,0 +1,86 @@
+User-agent: *
+Allow: /
+
+# Auth & onboarding (private flows)
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /portal
+Disallow: /portal/*
+Disallow: /settings
+Disallow: /settings/*
+Disallow: /onboarding
+Disallow: /onboarding/*
+Disallow: /api/
+Disallow: /auth/
+Disallow: /access-required
+
+# Legacy SpendCheck surfaces (pre-CerniQ, not ALM wedge)
+Disallow: /spendcheck
+Disallow: /spendcheck/*
+Disallow: /charts
+Disallow: /execution-quality
+Disallow: /live-data
+Disallow: /options
+Disallow: /portfolios
+Disallow: /expenses
+Disallow: /expenses/*
+Disallow: /dashboard/ticker
+Disallow: /dashboard/ticker/*
+Disallow: /dashboard/valuation
+
+# Premature platform pages (outrun the ALM wedge — FA-08)
+Disallow: /ai-insights
+Disallow: /developers
+Disallow: /strategy
+Disallow: /benchmark
+Disallow: /backtest
+Disallow: /compliance
+Disallow: /factor-risk
+Disallow: /risk-analytics
+Disallow: /risk-parity
+Disallow: /stress-test
+Disallow: /var-reports
+Disallow: /volatility
+Disallow: /volatility-analytics
+
+# Premature ALM quant pages (internal tools, not customer-facing)
+Disallow: /alm/monte-carlo
+Disallow: /alm/hull-white
+Disallow: /alm/black-litterman
+Disallow: /alm/hrp
+Disallow: /alm/garch
+Disallow: /alm/pca-yield-curve
+Disallow: /alm/svensson
+Disallow: /alm/kmv-merton
+Disallow: /alm/copula-credit
+Disallow: /alm/conc-var
+Disallow: /alm/cvar-optimizer
+Disallow: /alm/credit-risk
+Disallow: /alm/credit-metrics
+Disallow: /alm/climate-risk
+Disallow: /alm/capital-optimizer
+Disallow: /alm/cap-floor
+Disallow: /alm/oas
+Disallow: /alm/frtb-ima
+Disallow: /alm/macro-factors
+Disallow: /alm/macro-regime
+Disallow: /alm/network
+Disallow: /alm/behavioral-duration
+Disallow: /alm/sofr-exposure
+Disallow: /alm/camel-forecast
+Disallow: /alm/forward-sim
+Disallow: /alm/optionality
+Disallow: /alm/wrong-way-risk
+Disallow: /alm/ews
+Disallow: /alm/nim-optimizer
+Disallow: /alm/ltp
+Disallow: /alm/fed-futures
+Disallow: /alm/stress-v2
+Disallow: /alm/stress-pack
+Disallow: /alm/rate-shock-v2
+Disallow: /alm/var
+Disallow: /alm/peer-benchmarking
+Disallow: /alm/usvi
+Disallow: /alm/reseller
+
+Sitemap: https://cerniq.io/sitemap.xml

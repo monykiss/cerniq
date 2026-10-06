@@ -1,0 +1,7 @@
+{
+  "agentId": "ALM_DECISION",
+  "meanScore": 0.0,
+  "perCase": {},
+  "updatedAt": "2026-04-15T00:00:00.000Z",
+  "note": "Initial baseline — run `pnpm eval:baseline --agent alm_decision` after first verified green run. Do not update without human review per Vol3 §Layer 2 Consistency gate."
+}

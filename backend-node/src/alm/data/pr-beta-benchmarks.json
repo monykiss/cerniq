@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "source": "NCUA 5300 Call Reports",
+    "period": "2015Q1–2024Q3",
+    "institutions": 94,
+    "methodology": "OLS regression: ΔDeposit_rate ~ ΔFedFunds + size_tier",
+    "lastUpdated": "2024-10-15"
+  },
+  "betas": {
+    "demand_deposits": {
+      "small": 0.08, "medium": 0.11, "large": 0.14,
+      "p10": 0.04, "p25": 0.06, "p50": 0.10, "p75": 0.17, "p90": 0.22,
+      "r2": 0.72, "pValue": 0.001
+    },
+    "savings_deposits": {
+      "small": 0.14, "medium": 0.18, "large": 0.22,
+      "p10": 0.08, "p25": 0.10, "p50": 0.17, "p75": 0.26, "p90": 0.33,
+      "r2": 0.68, "pValue": 0.002
+    },
+    "share_drafts": {
+      "small": 0.10, "medium": 0.13, "large": 0.16,
+      "p10": 0.05, "p25": 0.07, "p50": 0.12, "p75": 0.19, "p90": 0.24,
+      "r2": 0.65, "pValue": 0.003
+    },
+    "money_market": {
+      "small": 0.32, "medium": 0.41, "large": 0.51,
+      "p10": 0.22, "p25": 0.26, "p50": 0.40, "p75": 0.58, "p90": 0.67,
+      "r2": 0.81, "pValue": 0.001
+    },
+    "iras": {
+      "small": 0.45, "medium": 0.58, "large": 0.68,
+      "p10": 0.32, "p25": 0.38, "p50": 0.55, "p75": 0.74, "p90": 0.82,
+      "r2": 0.77, "pValue": 0.001
+    },
+    "time_deposits": {
+      "small": 0.71, "medium": 0.79, "large": 0.86,
+      "p10": 0.58, "p25": 0.65, "p50": 0.78, "p75": 0.91, "p90": 0.95,
+      "r2": 0.89, "pValue": 0.001
+    }
+  },
+  "sizeTiers": {
+    "small": { "label": "< $50M assets", "count": 32 },
+    "medium": { "label": "$50M–$300M assets", "count": 43 },
+    "large": { "label": "> $300M assets", "count": 19 }
+  },
+  "nationalComparison": {
+    "demand_deposits": 0.18,
+    "savings_deposits": 0.35,
+    "share_drafts": 0.20,
+    "money_market": 0.55,
+    "iras": 0.72,
+    "time_deposits": 0.88
+  },
+  "insight": "PR cooperative deposit betas are systematically 25-40% lower than national FDIC-insured bank averages, driven by member loyalty, limited mass-market alternatives, and cooperative ownership psychology."
+}

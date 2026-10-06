@@ -1,0 +1,19 @@
+{
+  "id": "alm-009",
+  "name": "Hurricane PR — catastrophic stress overlay",
+  "agentId": "ALM_DECISION",
+  "description": "Post-hurricane Maria-type scenario overlay: 40% collateral haircut on real estate, 30% deposit flight, 200bps rate spike, CAMEL downgrade trigger. Tests agent's ability to synthesize catastrophic scenario data from multiple models and produce a crisis-grade decision brief. Regulatory ref must include FFIEC Business Continuity guidance.",
+  "input": {
+    "balanceSheetId": "golden-009",
+    "institutionId": "golden-inst-001",
+    "scenarioOverlay": "hurricane-pr-cat5"
+  },
+  "expectedFindings": {
+    "topRiskDomain": null,
+    "healthScoreRange": [20, 45],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 8,
+    "requiredTools": ["runFullSwarm", "runRateShock", "getLCR", "getCapitalAdequacy"],
+    "requiresBilingual": true
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "alm-004",
+  "name": "CECL inadequacy — commercial real estate under-reserved",
+  "agentId": "ALM_DECISION",
+  "description": "CRE segment under-reserved by $580K vs peer median (1.32% coverage vs 1.58%). Qualitative factors suggest deteriorating collateral values. Tests that agent identifies credit risk as primary when other metrics are within tolerance.",
+  "input": {
+    "balanceSheetId": "golden-004",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "topRiskDomain": "Credit Risk",
+    "healthScoreRange": [55, 70],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "getCECL", "getPeerBenchmark"],
+    "requiresBilingual": true
+  }
+}

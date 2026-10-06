@@ -1,0 +1,270 @@
+{
+  "startingNetEquityRatioPct": 10,
+  "startingStatutoryRatioPct": 18.622,
+  "netEquityFloorPct": 4,
+  "statutoryRwaFloorPct": 8,
+  "periods": [
+    {
+      "period": 0,
+      "yearsElapsed": 0,
+      "equity": 25,
+      "totalAssets": 250,
+      "riskWeightedAssets": 134.25,
+      "netEquityRatioPct": 10,
+      "statutoryRatioPct": 18.622,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 1,
+      "yearsElapsed": 0.25,
+      "equity": 25.375,
+      "totalAssets": 252.4634,
+      "riskWeightedAssets": 135.5728,
+      "netEquityRatioPct": 10.051,
+      "statutoryRatioPct": 18.7169,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 2,
+      "yearsElapsed": 0.5,
+      "equity": 25.7537,
+      "totalAssets": 254.951,
+      "riskWeightedAssets": 136.9087,
+      "netEquityRatioPct": 10.1014,
+      "statutoryRatioPct": 18.8109,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 3,
+      "yearsElapsed": 0.75,
+      "equity": 26.1361,
+      "totalAssets": 257.4631,
+      "riskWeightedAssets": 138.2577,
+      "netEquityRatioPct": 10.1514,
+      "statutoryRatioPct": 18.9039,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 4,
+      "yearsElapsed": 1,
+      "equity": 26.5223,
+      "totalAssets": 260,
+      "riskWeightedAssets": 139.62,
+      "netEquityRatioPct": 10.2009,
+      "statutoryRatioPct": 18.9961,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 5,
+      "yearsElapsed": 1.25,
+      "equity": 26.9123,
+      "totalAssets": 262.5619,
+      "riskWeightedAssets": 140.9957,
+      "netEquityRatioPct": 10.2499,
+      "statutoryRatioPct": 19.0873,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 6,
+      "yearsElapsed": 1.5,
+      "equity": 27.3062,
+      "totalAssets": 265.149,
+      "riskWeightedAssets": 142.385,
+      "netEquityRatioPct": 10.2984,
+      "statutoryRatioPct": 19.1777,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 7,
+      "yearsElapsed": 1.75,
+      "equity": 27.7039,
+      "totalAssets": 267.7616,
+      "riskWeightedAssets": 143.788,
+      "netEquityRatioPct": 10.3465,
+      "statutoryRatioPct": 19.2672,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 8,
+      "yearsElapsed": 2,
+      "equity": 28.1055,
+      "totalAssets": 270.4,
+      "riskWeightedAssets": 145.2048,
+      "netEquityRatioPct": 10.3941,
+      "statutoryRatioPct": 19.3558,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 9,
+      "yearsElapsed": 2.25,
+      "equity": 28.5111,
+      "totalAssets": 273.0644,
+      "riskWeightedAssets": 146.6356,
+      "netEquityRatioPct": 10.4412,
+      "statutoryRatioPct": 19.4435,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 10,
+      "yearsElapsed": 2.5,
+      "equity": 28.9207,
+      "totalAssets": 275.755,
+      "riskWeightedAssets": 148.0804,
+      "netEquityRatioPct": 10.4878,
+      "statutoryRatioPct": 19.5304,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 11,
+      "yearsElapsed": 2.75,
+      "equity": 29.3344,
+      "totalAssets": 278.4721,
+      "riskWeightedAssets": 149.5395,
+      "netEquityRatioPct": 10.534,
+      "statutoryRatioPct": 19.6165,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 12,
+      "yearsElapsed": 3,
+      "equity": 29.7521,
+      "totalAssets": 281.216,
+      "riskWeightedAssets": 151.013,
+      "netEquityRatioPct": 10.5798,
+      "statutoryRatioPct": 19.7017,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 13,
+      "yearsElapsed": 3.25,
+      "equity": 30.1739,
+      "totalAssets": 283.9869,
+      "riskWeightedAssets": 152.501,
+      "netEquityRatioPct": 10.6251,
+      "statutoryRatioPct": 19.786,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 14,
+      "yearsElapsed": 3.5,
+      "equity": 30.5999,
+      "totalAssets": 286.7852,
+      "riskWeightedAssets": 154.0036,
+      "netEquityRatioPct": 10.67,
+      "statutoryRatioPct": 19.8696,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 15,
+      "yearsElapsed": 3.75,
+      "equity": 31.03,
+      "totalAssets": 289.611,
+      "riskWeightedAssets": 155.5211,
+      "netEquityRatioPct": 10.7144,
+      "statutoryRatioPct": 19.9523,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 16,
+      "yearsElapsed": 4,
+      "equity": 31.4645,
+      "totalAssets": 292.4646,
+      "riskWeightedAssets": 157.0535,
+      "netEquityRatioPct": 10.7584,
+      "statutoryRatioPct": 20.0342,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 17,
+      "yearsElapsed": 4.25,
+      "equity": 31.9032,
+      "totalAssets": 295.3464,
+      "riskWeightedAssets": 158.601,
+      "netEquityRatioPct": 10.8019,
+      "statutoryRatioPct": 20.1154,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 18,
+      "yearsElapsed": 4.5,
+      "equity": 32.3462,
+      "totalAssets": 298.2566,
+      "riskWeightedAssets": 160.1638,
+      "netEquityRatioPct": 10.8451,
+      "statutoryRatioPct": 20.1957,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 19,
+      "yearsElapsed": 4.75,
+      "equity": 32.7936,
+      "totalAssets": 301.1954,
+      "riskWeightedAssets": 161.7419,
+      "netEquityRatioPct": 10.8878,
+      "statutoryRatioPct": 20.2752,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    },
+    {
+      "period": 20,
+      "yearsElapsed": 5,
+      "equity": 33.2454,
+      "totalAssets": 304.1632,
+      "riskWeightedAssets": 163.3357,
+      "netEquityRatioPct": 10.9301,
+      "statutoryRatioPct": 20.354,
+      "meetsNetEquityFloor": true,
+      "meetsStatutoryFloor": true
+    }
+  ],
+  "milestones": {
+    "alreadyMeetsNetEquityFloor": true,
+    "alreadyMeetsStatutoryFloor": true,
+    "yearsToNetEquityFloor": 0,
+    "yearsToStatutoryFloor": 0
+  },
+  "stressed": null,
+  "assumptions": {
+    "annualAssetGrowthPct": 4,
+    "annualRoaPct": 0.6,
+    "surplusRetentionPct": 100,
+    "horizonYears": 5,
+    "periodsPerYear": 4,
+    "netEquityFloorPct": 4,
+    "statutoryRwaFloorPct": 8,
+    "stressCapitalHitPct": 0
+  },
+  "overallStatus": "computed",
+  "gaps": [
+    {
+      "field": "capital.glidePath.assumptions",
+      "reason": "COSSEC_INPUTS_INSUFFICIENT",
+      "severity": "WARNING",
+      "action": "Proyección basada en supuestos de planificación (crecimiento 4%/año, ROA 0.6%, retención de excedente 100%); son estimados, no datos medidos — calibrar con el plan de negocio de la cooperativa. / Projection based on planning assumptions (growth 4%/yr, ROA 0.6%, surplus retention 100%); these are estimates, not measured data — calibrate to the cooperativa's business plan.",
+      "context": {
+        "annualAssetGrowthPct": 4,
+        "annualRoaPct": 0.6,
+        "surplusRetentionPct": 100
+      }
+    }
+  ]
+}

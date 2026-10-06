@@ -1,0 +1,12 @@
+{
+  "id": "FED_H15.treasury_10y_par_yield.2026-03-31",
+  "source": "FED_H15",
+  "sourceUrl": "https://www.federalreserve.gov/releases/h15/20260331/",
+  "asOfDate": "2026-03-31",
+  "metric": "treasury_10y_par_yield",
+  "expectedValue": 4.28,
+  "units": "percent",
+  "modelKey": "rate.hjm-2f",
+  "description": "Fed H.15 10-year Treasury constant-maturity par yield, quarter-end 2026-Q1. Canonical anchor for HJM 2-factor calibration — the model should reproduce this exact yield when fed the same Fed H.15 curve on the same date.",
+  "reproduction": "Feed the HJM 2-factor engine the full 2026-03-31 Fed H.15 par curve (1mo, 3mo, 6mo, 1y, 2y, 3y, 5y, 7y, 10y, 20y, 30y) and read the 10-year point off the recalibrated forward curve."
+}

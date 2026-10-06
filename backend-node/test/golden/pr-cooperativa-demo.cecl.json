@@ -1,0 +1,131 @@
+{
+  "macroOverlay": {
+    "basis": "derived-from-macro",
+    "macroStressIndex": 0,
+    "inputs": {
+      "prUnemploymentPct": 5.6,
+      "prHpiYoyPct": 14.95,
+      "prNetMigrationPct": -0.09,
+      "asOf": "2026-07-09"
+    },
+    "provenance": "Overlay derivado de datos macro de PR (desempleo 5.6%, HPI 14.95% i/a, migración neta -0.09%; 2026-07-09); índice de estrés macro 0. Coeficientes PROVISIONALES — pendiente validación COSSEC/NCUA. / Overlay derived from PR macro data (unemployment 5.6%, HPI 14.95% YoY, net migration -0.09%; 2026-07-09); macro-stress index 0. Coefficients PROVISIONAL — pending COSSEC/NCUA validation. Fuente: snapshot comprometido pr-macro-snapshot (verificado 2026-07-09; BLS LAUS, FHFA HPI, Census Vintage 2025 — procedencia por serie en el módulo). / Source: committed pr-macro-snapshot (verified 2026-07-09; per-series provenance in the module)."
+  },
+  "totalBalance": 200,
+  "totalAllowance": 14.7035,
+  "weightedCoverageRatio": 0.0735,
+  "methodology": "PD×LGD (PR)",
+  "segments": [
+    {
+      "segmentName": "Préstamos Personales",
+      "balance": 40,
+      "methodology": "PD×LGD (PR) (Weighted)",
+      "historicalLossRate": 0.022,
+      "qualitativeAdj": 0.002,
+      "adjustedLossRate": 0.024,
+      "expectedLoss": 1.9562,
+      "allowanceRequired": 3.4815,
+      "coverageRatio": 0.087
+    },
+    {
+      "segmentName": "Préstamos de Auto",
+      "balance": 35,
+      "methodology": "PD×LGD (PR) (Weighted)",
+      "historicalLossRate": 0.012,
+      "qualitativeAdj": 0.001,
+      "adjustedLossRate": 0.013,
+      "expectedLoss": 0.9006,
+      "allowanceRequired": 1.6029,
+      "coverageRatio": 0.0458
+    },
+    {
+      "segmentName": "Hipotecas Residenciales",
+      "balance": 90,
+      "methodology": "PD×LGD (PR) (Weighted)",
+      "historicalLossRate": 0.008,
+      "qualitativeAdj": 0,
+      "adjustedLossRate": 0.008,
+      "expectedLoss": 4.2403,
+      "allowanceRequired": 7.5465,
+      "coverageRatio": 0.0838
+    },
+    {
+      "segmentName": "Préstamos Comerciales (MBL)",
+      "balance": 25,
+      "methodology": "PD×LGD (PR) (Weighted)",
+      "historicalLossRate": 0.015,
+      "qualitativeAdj": 0.003,
+      "adjustedLossRate": 0.018,
+      "expectedLoss": 1.1616,
+      "allowanceRequired": 2.0673,
+      "coverageRatio": 0.0827
+    },
+    {
+      "segmentName": "Préstamos con Garantía de Acciones",
+      "balance": 10,
+      "methodology": "PD×LGD (PR) (Weighted)",
+      "historicalLossRate": 0.003,
+      "qualitativeAdj": 0,
+      "adjustedLossRate": 0.003,
+      "expectedLoss": 0.003,
+      "allowanceRequired": 0.0053,
+      "coverageRatio": 0.0005
+    }
+  ],
+  "macroScenarioBreakdown": {
+    "baseline": 8.2618,
+    "adverse": 16.4265,
+    "severelyAdverse": 26.1823,
+    "weighted": 14.7035
+  },
+  "overallStatus": "computed",
+  "accountingBasis": {
+    "framework": "ASC 326 (FASB ASU 2016-13, CECL) — GAAP measurement basis",
+    "regulatoryContext": "COSSEC CAEL con cómputo CECL (Reglamento 7790); reporte cooperativo en transición RAP→GAAP. / COSSEC CAEL with CECL computation (Reg. 7790); cooperativa reporting transitioning RAP→GAAP.",
+    "effectiveNote": "CECL efectivo para entidades no-PBE en años fiscales que comienzan después del 2022-12-15. / CECL effective for non-PBE entities for fiscal years beginning after 2022-12-15."
+  },
+  "gaps": [
+    {
+      "field": "cecl.macroOverlay",
+      "reason": "COSSEC_INPUTS_INSUFFICIENT",
+      "severity": "WARNING",
+      "action": "Los multiplicadores PD y pesos de escenario fueron DERIVADOS de datos macro de PR (índice de estrés 0); la calibración (coeficientes de sensibilidad, estado de referencia) es PROVISIONAL — confirmar con COSSEC/NCUA o calibrar con datos propios. / The PD multipliers and scenario weights were DERIVED from PR macro data (stress index 0); the calibration (sensitivity coefficients, reference state) is PROVISIONAL — confirm with COSSEC/NCUA or calibrate to institution data.",
+      "context": {
+        "basis": "derived-from-macro",
+        "macroStressIndex": 0,
+        "asOf": "2026-07-09"
+      }
+    }
+  ],
+  "productClassification": [
+    {
+      "segmentName": "Préstamos Personales",
+      "productType": "PRESTAMO_PERSONAL",
+      "nombre": "Préstamos personales",
+      "defaultsApplied": false
+    },
+    {
+      "segmentName": "Préstamos de Auto",
+      "productType": "PRESTAMO_AUTO",
+      "nombre": "Préstamos de auto",
+      "defaultsApplied": false
+    },
+    {
+      "segmentName": "Hipotecas Residenciales",
+      "productType": "HIPOTECA",
+      "nombre": "Hipotecas",
+      "defaultsApplied": false
+    },
+    {
+      "segmentName": "Préstamos Comerciales (MBL)",
+      "productType": "PRESTAMO_COMERCIAL",
+      "nombre": "Préstamos comerciales (MBL)",
+      "defaultsApplied": false
+    },
+    {
+      "segmentName": "Préstamos con Garantía de Acciones",
+      "productType": "PRESTAMO_GARANTIA_ACCIONES",
+      "nombre": "Préstamos con garantía de acciones",
+      "defaultsApplied": false
+    }
+  ]
+}

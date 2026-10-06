@@ -1,0 +1,96 @@
+{
+  "$schema": "./_schema.ts#InstitutionFixture",
+  "seedKey": "pr-bank-demo",
+  "name": "Banco Comunidad PR",
+  "type": "bank",
+  "totalAssets": 1200,
+  "currency": "USD",
+  "reportingDate": "2026-01-31",
+  "primaryRegulator": "FDIC",
+  "fiscalYearEnd": "december",
+  "preferredLanguage": "both",
+  "items": [
+    {
+      "category": "asset",
+      "subcategory": "residential_mortgages",
+      "name": "Fixed Rate Mortgages",
+      "balance": 480,
+      "rate": 6.5,
+      "duration": 4.2,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "commercial_loans",
+      "name": "Variable Rate Commercial Loans",
+      "balance": 300,
+      "rate": 8.2,
+      "duration": 0.5,
+      "rateType": "variable"
+    },
+    {
+      "category": "asset",
+      "subcategory": "investment_securities",
+      "name": "Investment Portfolio",
+      "balance": 240,
+      "rate": 4.1,
+      "duration": 2.8,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "cash_equivalents",
+      "name": "Cash & HQLA",
+      "balance": 180,
+      "rate": 5.25,
+      "duration": 0.1,
+      "rateType": "variable"
+    },
+    {
+      "category": "liability",
+      "subcategory": "demand_deposits",
+      "name": "Demand Deposits",
+      "balance": 357,
+      "rate": 0.5,
+      "duration": 0.1,
+      "rateType": "variable",
+      "depositBeta": 0.25
+    },
+    {
+      "category": "liability",
+      "subcategory": "time_deposits",
+      "name": "Time Deposits (CDs)",
+      "balance": 306,
+      "rate": 3.8,
+      "duration": 1.2,
+      "rateType": "fixed"
+    },
+    {
+      "category": "liability",
+      "subcategory": "borrowings",
+      "name": "FHLB Advances",
+      "balance": 204,
+      "rate": 5.5,
+      "duration": 2.1,
+      "rateType": "fixed"
+    },
+    {
+      "category": "liability",
+      "subcategory": "other_liabilities",
+      "name": "Subordinated Debt",
+      "balance": 153,
+      "rate": 6.0,
+      "duration": 4.5,
+      "rateType": "fixed"
+    }
+  ],
+  "liquidity": {
+    "date": "2026-01-31",
+    "hqlaLevel1": 126,
+    "hqlaLevel2": 54,
+    "cashOutflows": 152.4,
+    "cashInflows": 0,
+    "lcr": 118.1,
+    "nsfr": 112.0
+  }
+}

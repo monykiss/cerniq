@@ -1,0 +1,85 @@
+{
+  "institutionId": "inst-coop-golden",
+  "baseNEV": 25,
+  "baseNEVRatio": 10,
+  "shocks": [
+    {
+      "shockBps": -300,
+      "nev": 56.01,
+      "nevRatio": 19.41,
+      "nevChangePct": 124.03,
+      "riskBand": {
+        "level": "low",
+        "label": "Low risk",
+        "labelEs": "Riesgo bajo"
+      }
+    },
+    {
+      "shockBps": -200,
+      "nev": 44.76,
+      "nevRatio": 16.29,
+      "nevChangePct": 79.05,
+      "riskBand": {
+        "level": "low",
+        "label": "Low risk",
+        "labelEs": "Riesgo bajo"
+      }
+    },
+    {
+      "shockBps": -100,
+      "nev": 34.43,
+      "nevRatio": 13.14,
+      "nevChangePct": 37.71,
+      "riskBand": {
+        "level": "low",
+        "label": "Low risk",
+        "labelEs": "Riesgo bajo"
+      }
+    },
+    {
+      "shockBps": 100,
+      "nev": 16.48,
+      "nevRatio": 6.89,
+      "nevChangePct": -34.07,
+      "riskBand": {
+        "level": "low",
+        "label": "Low risk",
+        "labelEs": "Riesgo bajo"
+      }
+    },
+    {
+      "shockBps": 200,
+      "nev": 8.87,
+      "nevRatio": 3.87,
+      "nevChangePct": -64.51,
+      "riskBand": {
+        "level": "high",
+        "label": "High risk",
+        "labelEs": "Riesgo alto"
+      }
+    },
+    {
+      "shockBps": 300,
+      "nev": 2.17,
+      "nevRatio": 0.99,
+      "nevChangePct": -91.31,
+      "riskBand": {
+        "level": "high",
+        "label": "High risk",
+        "labelEs": "Riesgo alto"
+      }
+    }
+  ],
+  "worstCase": {
+    "shockBps": 300,
+    "nev": 2.17,
+    "nevRatio": 0.99,
+    "nevChangePct": -91.31,
+    "riskBand": {
+      "level": "high",
+      "label": "High risk",
+      "labelEs": "Riesgo alto"
+    }
+  },
+  "overallRating": "high"
+}

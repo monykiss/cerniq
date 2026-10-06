@@ -1,0 +1,17 @@
+{
+  "id": "committee-001",
+  "name": "Board report — bilingual (EN + ES)",
+  "agentId": "COMMITTEE_REPORT",
+  "description": "Generate a Board-level committee report from ALM Decision run output. Must include all required sections: executiveSummary (≤150 words), financialPosition, interestRateRisk, creditConcentration, liquidityRisk, peerComparison, recommendations[], regulatoryCalendar[]. Language: bilingual. Tests completeness of the narrative pipeline and bilingual enforcement.",
+  "input": {
+    "sourceRunId": "golden-alm-run-001",
+    "committeeType": "board",
+    "language": "bilingual",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "minToolsCalled": 1,
+    "requiredTools": [],
+    "requiresBilingual": true
+  }
+}

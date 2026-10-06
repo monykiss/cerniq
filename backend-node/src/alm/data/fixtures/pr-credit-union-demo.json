@@ -1,0 +1,88 @@
+{
+  "$schema": "./_schema.ts#InstitutionFixture",
+  "seedKey": "pr-credit-union-demo",
+  "name": "CoopAhorro PR",
+  "type": "credit_union",
+  "totalAssets": 180,
+  "currency": "USD",
+  "reportingDate": "2026-01-31",
+  "primaryRegulator": "NCUA",
+  "fiscalYearEnd": "december",
+  "preferredLanguage": "both",
+  "items": [
+    {
+      "category": "asset",
+      "subcategory": "consumer_loans",
+      "name": "Auto Loans",
+      "balance": 54,
+      "rate": 7.8,
+      "duration": 2.5,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "residential_mortgages",
+      "name": "Home Mortgages",
+      "balance": 63,
+      "rate": 5.9,
+      "duration": 5.0,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "investment_securities",
+      "name": "Bond Portfolio",
+      "balance": 36,
+      "rate": 3.8,
+      "duration": 3.2,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "cash_equivalents",
+      "name": "Cash & Reserves",
+      "balance": 27,
+      "rate": 5.0,
+      "duration": 0.1,
+      "rateType": "variable"
+    },
+    {
+      "category": "liability",
+      "subcategory": "savings_deposits",
+      "name": "Member Savings",
+      "balance": 81,
+      "rate": 1.5,
+      "duration": 0.3,
+      "rateType": "variable",
+      "depositBeta": 0.3
+    },
+    {
+      "category": "liability",
+      "subcategory": "demand_deposits",
+      "name": "Checking Accounts",
+      "balance": 36,
+      "rate": 0.25,
+      "duration": 0.1,
+      "rateType": "variable",
+      "depositBeta": 0.15
+    },
+    {
+      "category": "liability",
+      "subcategory": "time_deposits",
+      "name": "Share Certificates",
+      "balance": 45,
+      "rate": 4.2,
+      "duration": 1.0,
+      "rateType": "fixed"
+    }
+  ],
+  "liquidity": {
+    "date": "2026-01-31",
+    "hqlaLevel1": 21.6,
+    "hqlaLevel2": 5.4,
+    "cashOutflows": 23.4,
+    "cashInflows": 0,
+    "lcr": 115.4,
+    "nsfr": 108.0
+  }
+}

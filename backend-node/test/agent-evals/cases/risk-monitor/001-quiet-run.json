@@ -1,0 +1,14 @@
+{
+  "id": "rm-001",
+  "name": "Quiet run — silence is signal",
+  "agentId": "RISK_MONITOR",
+  "description": "All metrics within thresholds. Agent must return alerts: [], quietRun: true. Validates that the agent does not fabricate alerts when none are warranted.",
+  "input": {
+    "institutionId": "golden-inst-002"
+  },
+  "expectedFindings": {
+    "minToolsCalled": 4,
+    "requiredTools": ["getLCR", "getCapitalAdequacy"],
+    "requiresBilingual": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "alm-001",
+  "name": "High rate risk, adequate liquidity",
+  "agentId": "ALM_DECISION",
+  "description": "3yr fixed-rate auto loan concentration driving duration gap. NII sensitivity at +200bps exceeds policy. Liquidity adequate (LCR 112%). Classic PR cooperativa pattern.",
+  "input": {
+    "balanceSheetId": "golden-001",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "topRiskDomain": "Interest Rate Risk",
+    "healthScoreRange": [50, 70],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "runRateShock", "getRepricingGap"],
+    "requiresBilingual": true
+  }
+}

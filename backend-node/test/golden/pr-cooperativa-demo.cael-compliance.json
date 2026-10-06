@@ -1,0 +1,293 @@
+[
+  {
+    "variant": "reg7790",
+    "frameworkId": "cael-pr-7790",
+    "frameworkName": "CAEL (Reglamento 7790)",
+    "frameworkNameEs": "CAEL (Reglamento 7790)",
+    "lossBasis": "incurred-loss",
+    "ratios": [
+      {
+        "id": 1,
+        "name": "Capital Adequacy (Indivisible Capital / RWA)",
+        "nameEs": "Suficiencia de Capital (Capital Indivisible / APR)",
+        "category": "capital",
+        "value": 18.62,
+        "unit": "%",
+        "threshold": ">= 8%",
+        "thresholdDirection": "gte",
+        "weight": 30,
+        "status": "pass",
+        "source": "Ley 255-2002 Art. 6.02 (8% indivisible capital over RWA)",
+        "provisional": false
+      },
+      {
+        "id": 2,
+        "name": "Asset Quality (Delinquency + Allowance Coverage)",
+        "nameEs": "Calidad de Activos (Morosidad + Cobertura de Provisión)",
+        "category": "asset_quality",
+        "value": null,
+        "unit": "%",
+        "threshold": "<= 3%",
+        "thresholdDirection": "lte",
+        "weight": 30,
+        "status": "data_unavailable",
+        "source": "Reglamento 7790 (CAEL bands UNVERIFIED — non-OCR scan)",
+        "provisional": true
+      },
+      {
+        "id": 3,
+        "name": "Earnings (Return on Assets)",
+        "nameEs": "Rentabilidad (Retorno sobre Activos)",
+        "category": "earnings",
+        "value": 3.836,
+        "unit": "%",
+        "threshold": ">= 0.5%",
+        "thresholdDirection": "gte",
+        "weight": 20,
+        "status": "pass",
+        "source": "Reglamento 7790 (CAEL bands UNVERIFIED — non-OCR scan)",
+        "provisional": true
+      },
+      {
+        "id": 4,
+        "name": "Liquidity Ratio",
+        "nameEs": "Razón de Liquidez",
+        "category": "liquidity",
+        "value": 24,
+        "unit": "%",
+        "threshold": ">= 5%",
+        "thresholdDirection": "gte",
+        "weight": 20,
+        "status": "pass",
+        "source": "Carta Circular CC-2021-02 (5% minimum liquidity)",
+        "provisional": false
+      }
+    ],
+    "allowance": {
+      "basis": "incurred-loss",
+      "totalAllowance": 2.615,
+      "totalLoans": 200,
+      "coveragePct": 1.3075,
+      "methodology": "Incurred Loss (Reg 8665)"
+    },
+    "composite": {
+      "examReadinessScore": 100,
+      "computableWeight": 70,
+      "provisional": true
+    },
+    "overallStatus": "conditional",
+    "provenance": "CAEL base por Reglamento 7790; provisión en base de pérdida incurrida (Reg 8665 §2.12.2.5). / CAEL base per Reg 7790; allowance on the incurred-loss basis (Reg 8665 §2.12.2.5).",
+    "gaps": [
+      {
+        "field": "cael.asset_quality",
+        "reason": "COSSEC_INPUTS_INSUFFICIENT",
+        "severity": "WARNING",
+        "action": "La calidad de activos (morosidad/NPL) no está en el balance agregado de la cooperativa — cargue datos de préstamos morosos para evaluar esta razón. / Asset quality (delinquency/NPL) is not on the cooperativa aggregate balance sheet — load delinquent-loan data to evaluate this ratio.",
+        "context": {
+          "category": "asset_quality",
+          "variant": "reg7790"
+        }
+      },
+      {
+        "field": "cael.bands.provisional",
+        "reason": "COSSEC_INPUTS_INSUFFICIENT",
+        "severity": "WARNING",
+        "action": "Una o más bandas CAEL (Reglamento 7790) son PROVISIONALES — el texto operativo es un escaneo sin OCR; trate el estatus como preliminar hasta validar con COSSEC. / One or more CAEL bands (Reglamento 7790) are PROVISIONAL — the operative text is a non-OCR scan; treat the status as preliminary pending COSSEC validation."
+      }
+    ]
+  },
+  {
+    "variant": "cecl",
+    "frameworkId": "cael-pr-cecl",
+    "frameworkName": "CAEL with CECL",
+    "frameworkNameEs": "CAEL con CECL",
+    "lossBasis": "cecl",
+    "ratios": [
+      {
+        "id": 1,
+        "name": "Capital Adequacy (Indivisible Capital / RWA)",
+        "nameEs": "Suficiencia de Capital (Capital Indivisible / APR)",
+        "category": "capital",
+        "value": 18.62,
+        "unit": "%",
+        "threshold": ">= 8%",
+        "thresholdDirection": "gte",
+        "weight": 30,
+        "status": "pass",
+        "source": "Ley 255-2002 Art. 6.02 (8% indivisible capital over RWA)",
+        "provisional": false
+      },
+      {
+        "id": 2,
+        "name": "Asset Quality (Delinquency + Allowance Coverage)",
+        "nameEs": "Calidad de Activos (Morosidad + Cobertura de Provisión)",
+        "category": "asset_quality",
+        "value": null,
+        "unit": "%",
+        "threshold": "<= 3%",
+        "thresholdDirection": "lte",
+        "weight": 30,
+        "status": "data_unavailable",
+        "source": "Reglamento 7790 (CAEL bands UNVERIFIED — non-OCR scan)",
+        "provisional": true
+      },
+      {
+        "id": 3,
+        "name": "Earnings (Return on Assets)",
+        "nameEs": "Rentabilidad (Retorno sobre Activos)",
+        "category": "earnings",
+        "value": 3.836,
+        "unit": "%",
+        "threshold": ">= 0.5%",
+        "thresholdDirection": "gte",
+        "weight": 20,
+        "status": "pass",
+        "source": "Reglamento 7790 (CAEL bands UNVERIFIED — non-OCR scan)",
+        "provisional": true
+      },
+      {
+        "id": 4,
+        "name": "Liquidity Ratio",
+        "nameEs": "Razón de Liquidez",
+        "category": "liquidity",
+        "value": 24,
+        "unit": "%",
+        "threshold": ">= 5%",
+        "thresholdDirection": "gte",
+        "weight": 20,
+        "status": "pass",
+        "source": "Carta Circular CC-2021-02 (5% minimum liquidity)",
+        "provisional": false
+      }
+    ],
+    "allowance": {
+      "basis": "cecl",
+      "totalAllowance": 17.4317,
+      "totalLoans": 200,
+      "coveragePct": 8.7159,
+      "methodology": "WARM"
+    },
+    "composite": {
+      "examReadinessScore": 100,
+      "computableWeight": 70,
+      "provisional": true
+    },
+    "overallStatus": "conditional",
+    "provenance": "CAEL con cómputo CECL (Carta Circular 2023-01, ASC 326). / CAEL with CECL computation (Carta Circular 2023-01, ASC 326).",
+    "gaps": [
+      {
+        "field": "cael.asset_quality",
+        "reason": "COSSEC_INPUTS_INSUFFICIENT",
+        "severity": "WARNING",
+        "action": "La calidad de activos (morosidad/NPL) no está en el balance agregado de la cooperativa — cargue datos de préstamos morosos para evaluar esta razón. / Asset quality (delinquency/NPL) is not on the cooperativa aggregate balance sheet — load delinquent-loan data to evaluate this ratio.",
+        "context": {
+          "category": "asset_quality",
+          "variant": "cecl"
+        }
+      },
+      {
+        "field": "cael.bands.provisional",
+        "reason": "COSSEC_INPUTS_INSUFFICIENT",
+        "severity": "WARNING",
+        "action": "Una o más bandas CAEL (Reglamento 7790) son PROVISIONALES — el texto operativo es un escaneo sin OCR; trate el estatus como preliminar hasta validar con COSSEC. / One or more CAEL bands (Reglamento 7790) are PROVISIONAL — the operative text is a non-OCR scan; treat the status as preliminary pending COSSEC validation."
+      }
+    ]
+  },
+  {
+    "variant": "piloto",
+    "frameworkId": "cael-pr-piloto",
+    "frameworkName": "CAEL Piloto (Net Equity Ratio)",
+    "frameworkNameEs": "CAEL Piloto (Razón de Patrimonio Neto)",
+    "lossBasis": "n/a",
+    "ratios": [
+      {
+        "id": 1,
+        "name": "Net Equity Ratio (Equity / Total Assets)",
+        "nameEs": "Razón de Patrimonio Neto (Patrimonio / Activos Totales)",
+        "category": "capital",
+        "value": 10,
+        "unit": "%",
+        "threshold": ">= 4%",
+        "thresholdDirection": "gte",
+        "weight": 30,
+        "status": "pass",
+        "source": "CAEL Piloto — 4% Net Equity phase-in (market research notes §3.5, UNVERIFIED)",
+        "provisional": true
+      },
+      {
+        "id": 2,
+        "name": "Asset Quality (Delinquency + Allowance Coverage)",
+        "nameEs": "Calidad de Activos (Morosidad + Cobertura de Provisión)",
+        "category": "asset_quality",
+        "value": null,
+        "unit": "%",
+        "threshold": "<= 3%",
+        "thresholdDirection": "lte",
+        "weight": 30,
+        "status": "data_unavailable",
+        "source": "Reglamento 7790 (CAEL bands UNVERIFIED — non-OCR scan)",
+        "provisional": true
+      },
+      {
+        "id": 3,
+        "name": "Earnings (Return on Assets)",
+        "nameEs": "Rentabilidad (Retorno sobre Activos)",
+        "category": "earnings",
+        "value": 3.836,
+        "unit": "%",
+        "threshold": ">= 0.5%",
+        "thresholdDirection": "gte",
+        "weight": 20,
+        "status": "pass",
+        "source": "Reglamento 7790 (CAEL bands UNVERIFIED — non-OCR scan)",
+        "provisional": true
+      },
+      {
+        "id": 4,
+        "name": "Liquidity Ratio",
+        "nameEs": "Razón de Liquidez",
+        "category": "liquidity",
+        "value": 24,
+        "unit": "%",
+        "threshold": ">= 5%",
+        "thresholdDirection": "gte",
+        "weight": 20,
+        "status": "pass",
+        "source": "Carta Circular CC-2021-02 (5% minimum liquidity)",
+        "provisional": false
+      }
+    ],
+    "allowance": {
+      "basis": "n/a",
+      "totalAllowance": null,
+      "totalLoans": null,
+      "coveragePct": null,
+      "methodology": null
+    },
+    "composite": {
+      "examReadinessScore": 100,
+      "computableWeight": 70,
+      "provisional": true
+    },
+    "overallStatus": "conditional",
+    "provenance": "CAEL Piloto: índice de Razón de Patrimonio Neto (patrimonio ÷ activos) en transición hacia un piso de 4%. / CAEL Piloto: Net Equity Ratio index (equity ÷ assets) phasing toward a 4% floor.",
+    "gaps": [
+      {
+        "field": "cael.asset_quality",
+        "reason": "COSSEC_INPUTS_INSUFFICIENT",
+        "severity": "WARNING",
+        "action": "La calidad de activos (morosidad/NPL) no está en el balance agregado de la cooperativa — cargue datos de préstamos morosos para evaluar esta razón. / Asset quality (delinquency/NPL) is not on the cooperativa aggregate balance sheet — load delinquent-loan data to evaluate this ratio.",
+        "context": {
+          "category": "asset_quality",
+          "variant": "piloto"
+        }
+      },
+      {
+        "field": "cael.bands.provisional",
+        "reason": "COSSEC_INPUTS_INSUFFICIENT",
+        "severity": "WARNING",
+        "action": "Una o más bandas CAEL (Reglamento 7790) son PROVISIONALES — el texto operativo es un escaneo sin OCR; trate el estatus como preliminar hasta validar con COSSEC. / One or more CAEL bands (Reglamento 7790) are PROVISIONAL — the operative text is a non-OCR scan; treat the status as preliminary pending COSSEC validation."
+      }
+    ]
+  }
+]

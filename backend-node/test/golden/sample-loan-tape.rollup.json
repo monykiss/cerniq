@@ -1,0 +1,90 @@
+{
+  "status": "ok",
+  "asOfDate": "2026-06-30",
+  "segments": [
+    {
+      "segmentName": "Hipotecas",
+      "recordCount": 4,
+      "balance": 635000,
+      "weightedAvgRate": 0.0626,
+      "rateCoveragePct": 100,
+      "weightedAvgMaturity": 24.35,
+      "maturityCoveragePct": 100,
+      "delinquency": {
+        "coveragePct": 100,
+        "balance30to59": 165000,
+        "balance60to89": 0,
+        "balance90plus": 0
+      },
+      "municipioCoveragePct": 100
+    },
+    {
+      "segmentName": "Auto",
+      "recordCount": 3,
+      "balance": 83000,
+      "weightedAvgRate": 0.0708,
+      "rateCoveragePct": 66.27,
+      "weightedAvgMaturity": 2.43,
+      "maturityCoveragePct": 71.08,
+      "delinquency": {
+        "coveragePct": 100,
+        "balance30to59": 0,
+        "balance60to89": 0,
+        "balance90plus": 24000
+      },
+      "municipioCoveragePct": 100
+    },
+    {
+      "segmentName": "Prestamos Personales",
+      "recordCount": 3,
+      "balance": 55000,
+      "weightedAvgRate": 0.1134,
+      "rateCoveragePct": 100,
+      "weightedAvgMaturity": 2.64,
+      "maturityCoveragePct": 100,
+      "delinquency": {
+        "coveragePct": 100,
+        "balance30to59": 0,
+        "balance60to89": 22000,
+        "balance90plus": 0
+      },
+      "municipioCoveragePct": 67.27
+    }
+  ],
+  "totals": {
+    "balance": 773000,
+    "recordCount": 10
+  },
+  "gaps": [
+    {
+      "field": "loanTape.coverage.rate",
+      "reason": "LOAN_TAPE_FIELD_MISSING",
+      "severity": "WARNING",
+      "action": "Los agregados de \"rate\" cubren el 96.38% del balance — el resto no aporta al promedio ponderado (nunca se imputa). / \"rate\" aggregates cover 96.38% of balance — the remainder does not contribute to the weighted average (never imputed).",
+      "context": {
+        "field": "rate",
+        "coveragePct": 96.38
+      }
+    },
+    {
+      "field": "loanTape.coverage.maturityDate",
+      "reason": "LOAN_TAPE_FIELD_MISSING",
+      "severity": "WARNING",
+      "action": "Los agregados de \"maturityDate\" cubren el 96.89% del balance — el resto no aporta al promedio ponderado (nunca se imputa). / \"maturityDate\" aggregates cover 96.89% of balance — the remainder does not contribute to the weighted average (never imputed).",
+      "context": {
+        "field": "maturityDate",
+        "coveragePct": 96.89
+      }
+    },
+    {
+      "field": "loanTape.coverage.municipio",
+      "reason": "LOAN_TAPE_FIELD_MISSING",
+      "severity": "WARNING",
+      "action": "Los agregados de \"municipio\" cubren el 97.67% del balance — el resto no aporta al promedio ponderado (nunca se imputa). / \"municipio\" aggregates cover 97.67% of balance — the remainder does not contribute to the weighted average (never imputed).",
+      "context": {
+        "field": "municipio",
+        "coveragePct": 97.67
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build output
+/frontend/.next/
+/frontend/out/
+/frontend/build/
+/frontend/.turbo
+/backend-node/dist/
+/dist/
+
+# Environment files — never commit secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Test output
+coverage/
+.nyc_output/
+/frontend/playwright-report/
+/frontend/test-results/
+/frontend/e2e/a11y-sweep/routes.generated.json
+/frontend/e2e/a11y-sweep/results/
+# authed a11y sweep stores a live session — never commit
+/frontend/e2e/a11y-sweep/.auth/
+
+# Python (services/cossec-parser)
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# Local tooling / agent state
+.claude/
+.codex/
+.cursor/
+.vercel
+docker-compose.override.yml
+tmp/
+temp/
+*.tmp

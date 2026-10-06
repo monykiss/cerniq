@@ -1,0 +1,43 @@
+category,subcategory,name,balance,rate,duration,rateType,repriceDate,maturityDate
+asset,residential_mortgages,30yr Fixed Pool A - San Juan Metro,9.5,5.85,12.5,fixed,,2039-09-01
+asset,residential_mortgages,30yr Fixed Pool B - Bayamon,8.0,5.60,13.5,fixed,,2041-03-01
+asset,residential_mortgages,30yr Fixed Pool C - Caguas,7.5,6.10,11.0,fixed,,2037-09-01
+asset,residential_mortgages,15yr Fixed Pool D - Ponce,6.5,4.85,8.5,fixed,,2035-03-01
+asset,residential_mortgages,15yr Fixed Pool E - Mayaguez,6.0,4.60,7.5,fixed,,2034-09-01
+asset,residential_mortgages,30yr Fixed Pool F - Arecibo,5.5,5.95,13.0,fixed,,2040-09-01
+asset,residential_mortgages,ARM Pool G - Carolina,5.0,6.60,9.0,variable,2027-03-01,2036-09-01
+asset,residential_mortgages,15yr Fixed Pool H - Guaynabo,4.0,5.10,6.5,fixed,,2033-09-01
+asset,consumer_loans,Auto Loans - New Vehicles,11.0,7.60,4.0,fixed,,2031-03-01
+asset,consumer_loans,Auto Loans - Used Vehicles,8.5,8.35,3.0,fixed,,2029-09-01
+asset,consumer_loans,Personal Lines of Credit,6.5,9.10,2.0,variable,2026-12-01,2028-09-01
+asset,consumer_loans,Student Consolidation Loans,5.0,7.10,5.0,fixed,,2031-09-01
+asset,consumer_loans,Secured Personal Loans,5.0,7.85,3.5,fixed,,2030-03-01
+asset,commercial_loans,CRE - Retail Center Bayamon,12.0,6.60,5.0,fixed,,2031-09-01
+asset,commercial_loans,CRE - Office Park Hato Rey,11.0,7.10,4.0,variable,2027-03-01,2030-09-01
+asset,commercial_loans,CRE - Industrial Warehouse Catano,8.0,6.85,4.5,fixed,,2031-03-01
+asset,commercial_loans,Small Business Term Loans,6.5,7.60,3.0,fixed,,2029-09-01
+asset,commercial_loans,Working Capital Lines,4.5,8.10,2.0,variable,2026-12-01,2028-09-01
+asset,investment_securities,US Treasury Notes 2yr,20.0,4.35,2.0,fixed,,2028-09-01
+asset,investment_securities,US Treasury Notes 5yr,18.0,4.60,4.5,fixed,,2031-03-01
+asset,investment_securities,Agency MBS - FNMA 30yr,16.0,5.10,6.0,fixed,,2032-09-01
+asset,investment_securities,Agency MBS - FHLMC 15yr,14.0,4.85,3.5,fixed,,2030-03-01
+asset,investment_securities,PR Municipal Bonds - AAA Insured,8.0,4.40,3.0,fixed,,2029-09-01
+asset,cash_equivalents,Fed Funds Sold,13.0,5.10,0.01,variable,2026-09-01,2026-09-02
+asset,cash_equivalents,Interest-Bearing Deposits - BPPR,11.0,4.70,0.08,variable,2026-09-01,2026-09-30
+asset,cash_equivalents,Money Market Instruments,10.0,4.45,0.25,variable,2026-11-01,2026-11-15
+liability,savings_deposits,Regular Savings - Socios,30.0,1.55,0.25,variable,2026-11-01,
+liability,savings_deposits,Christmas Club Savings,11.0,2.10,0.5,variable,2026-11-01,
+liability,savings_deposits,Youth Savings Accounts,7.0,1.80,0.25,variable,2026-11-01,
+liability,savings_deposits,Money Market Savings,16.0,3.10,0.17,variable,2026-09-01,
+liability,demand_deposits,Share Draft / Checking,17.0,1.30,0.08,variable,,
+liability,demand_deposits,Business Checking,9.0,1.55,0.08,variable,,
+liability,time_deposits,6-Month Share Certificates,13.0,2.60,0.5,fixed,,2027-03-01
+liability,time_deposits,12-Month Share Certificates,20.0,3.10,1.0,fixed,,2027-09-01
+liability,time_deposits,18-Month Share Certificates,15.0,3.35,1.5,fixed,,2028-03-01
+liability,time_deposits,24-Month Share Certificates,13.0,3.60,2.0,fixed,,2028-09-01
+liability,time_deposits,60-Month Share Certificates,11.0,3.85,5.0,fixed,,2031-09-01
+liability,borrowings,FHLB Advance - 1yr Fixed,18.0,5.10,1.0,fixed,,2027-09-01
+liability,borrowings,FHLB Advance - 2yr Fixed,16.0,5.25,2.0,fixed,,2028-09-01
+liability,borrowings,FHLB Advance - 3yr Fixed,12.0,5.40,3.0,fixed,,2029-09-01
+liability,subordinated_debt,Subordinated Capital Notes 2031,3.5,5.60,5.0,fixed,,2031-09-01
+liability,subordinated_debt,Subordinated Capital Notes 2029,2.5,5.35,3.0,fixed,,2029-09-01

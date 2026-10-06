@@ -1,0 +1,18 @@
+{
+  "id": "alm-003",
+  "name": "Concentration risk — auto loan sector HHI breach",
+  "agentId": "ALM_DECISION",
+  "description": "Single-sector concentration in auto loans. HHI 2,840 (above 2,500 internal limit). Top-member exposure at 8.2% of net worth. Rate risk manageable but concentration is the flag. Tests that agent correctly prioritizes concentration when rate risk is within policy.",
+  "input": {
+    "balanceSheetId": "golden-003",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "topRiskDomain": "Concentration Risk",
+    "healthScoreRange": [60, 75],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "getConcentration"],
+    "requiresBilingual": true
+  }
+}

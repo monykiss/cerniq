@@ -1,0 +1,81 @@
+{
+  "totalBalance": 200,
+  "totalAllowance": 2.615,
+  "weightedCoverageRatio": 0.0131,
+  "methodology": "Incurred Loss (Reg 8665)",
+  "segments": [
+    {
+      "segmentName": "Préstamos Personales",
+      "balance": 40,
+      "methodology": "Incurred Loss (Reg 8665)",
+      "historicalLossRate": 0.022,
+      "qualitativeAdj": 0.002,
+      "adjustedLossRate": 0.024,
+      "expectedLoss": 0.96,
+      "allowanceRequired": 0.96,
+      "coverageRatio": 0.024
+    },
+    {
+      "segmentName": "Préstamos de Auto",
+      "balance": 35,
+      "methodology": "Incurred Loss (Reg 8665)",
+      "historicalLossRate": 0.012,
+      "qualitativeAdj": 0.001,
+      "adjustedLossRate": 0.013,
+      "expectedLoss": 0.455,
+      "allowanceRequired": 0.455,
+      "coverageRatio": 0.013
+    },
+    {
+      "segmentName": "Hipotecas Residenciales",
+      "balance": 90,
+      "methodology": "Incurred Loss (Reg 8665)",
+      "historicalLossRate": 0.008,
+      "qualitativeAdj": 0,
+      "adjustedLossRate": 0.008,
+      "expectedLoss": 0.72,
+      "allowanceRequired": 0.72,
+      "coverageRatio": 0.008
+    },
+    {
+      "segmentName": "Préstamos Comerciales (MBL)",
+      "balance": 25,
+      "methodology": "Incurred Loss (Reg 8665)",
+      "historicalLossRate": 0.015,
+      "qualitativeAdj": 0.003,
+      "adjustedLossRate": 0.018,
+      "expectedLoss": 0.45,
+      "allowanceRequired": 0.45,
+      "coverageRatio": 0.018
+    },
+    {
+      "segmentName": "Préstamos con Garantía de Acciones",
+      "balance": 10,
+      "methodology": "Incurred Loss (Reg 8665)",
+      "historicalLossRate": 0.003,
+      "qualitativeAdj": 0,
+      "adjustedLossRate": 0.003,
+      "expectedLoss": 0.03,
+      "allowanceRequired": 0.03,
+      "coverageRatio": 0.003
+    }
+  ],
+  "overallStatus": "computed",
+  "accountingBasis": {
+    "framework": "Reglamento 8665 §2.12.2.5 (pérdida incurrida) — base de medición RAP / Reg 8665 §2.12.2.5 (incurred loss) — RAP measurement basis",
+    "regulatoryContext": "Base de pérdida incurrida para el CAEL (Reglamento 7790); coexiste con el cómputo CECL (ASC 326) durante la transición RAP→GAAP (~2028). / Incurred-loss basis for CAEL (Reg 7790); coexists with the CECL (ASC 326) computation during the RAP→GAAP transition (~2028).",
+    "effectiveNote": "Horizonte de emergencia de pérdida (LEP) = 1 año(s); sin descuento a valor presente. / Loss-emergence period (LEP) = 1 year(s); undiscounted."
+  },
+  "gaps": [
+    {
+      "field": "cecl.incurredLoss.lossEmergencePeriod",
+      "reason": "COSSEC_INPUTS_INSUFFICIENT",
+      "severity": "WARNING",
+      "action": "El período de emergencia de pérdida (1 año) y la base exacta del Reglamento 8665 §2.12.2.5 son configuración PROVISIONAL — el texto operativo es un escaneo sin OCR (CC-2023-01); confirmar con COSSEC antes de presentar. / The loss-emergence period (1yr) and the exact Reglamento 8665 §2.12.2.5 basis are PROVISIONAL config — the operative text is a non-OCR scan (CC-2023-01); confirm with COSSEC before filing.",
+      "context": {
+        "lossEmergencePeriodYears": 1,
+        "source": "Reg 8665 §2.12.2.5 (UNVERIFIED)"
+      }
+    }
+  ]
+}

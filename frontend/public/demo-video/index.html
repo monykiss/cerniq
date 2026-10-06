@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Product Demo — Upload to Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--bg:#f7fbff;--fg:#08111f;--muted:#5f7189;--electric:#22d3ee;--elb:#0891b2;
+--amber:#f59e0b;--emerald:#10b981;
+--line:rgba(146,176,214,.35);--panel:rgba(255,255,255,.94);
+}
+html{width:100vw;height:100vh;overflow:hidden;background:var(--bg)}
+body{width:1920px;height:1080px;overflow:hidden;background:var(--bg);font-family:'Manrope',sans-serif;color:var(--fg);transform-origin:0 0}
+body{background:radial-gradient(circle at 50% 8%,rgba(34,211,238,.10),transparent 18rem),radial-gradient(circle at 14% 16%,rgba(124,158,255,.10),transparent 24rem),linear-gradient(180deg,#fff 0%,#f7fbff 55%,#eef5fb 100%)}
+.fd{font-family:'Space Grotesk',sans-serif}
+.scene{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .9s ease;pointer-events:none}
+.scene.active{opacity:1}
+
+.panel{border-radius:18px;border:1px solid rgba(178,205,234,.50);background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(246,250,255,.98));box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 12px 24px rgba(63,93,132,.05);position:relative;overflow:hidden}
+.stat-card{border-radius:14px;border:1px solid rgba(171,198,229,.48);background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(243,249,255,.96));padding:14px 18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.98),0 8px 16px rgba(63,93,132,.04)}
+.stat-accent{position:relative;overflow:hidden}
+.stat-accent::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#0891b2,#22d3ee);opacity:.7}
+.chip{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.chip-pos{border:1px solid rgba(167,243,208,.9);background:rgba(236,253,245,.96);color:rgba(4,120,87,.96)}
+.chip-warn{border:1px solid rgba(253,230,138,.9);background:rgba(255,251,235,.96);color:rgba(180,83,9,.96)}
+.section-label{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(89,108,132,.8)}
+.tbl{width:100%;border-collapse:separate;border-spacing:0}
+.tbl th{background:rgba(239,246,255,.86);padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(100,116,139,.92);text-align:left}
+.tbl td{padding:10px 14px;color:rgba(15,23,42,.9);border-top:1px solid rgba(191,219,254,.35);font-size:12px}
+.btn-primary{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:10px 22px;font-size:13px;font-weight:700;background:linear-gradient(90deg,var(--amber),#fbbf24);color:#451a03;border:none;box-shadow:0 8px 16px rgba(245,158,11,.18)}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:10px 22px;font-size:13px;font-weight:600;background:transparent;border:1px solid rgba(203,213,225,.6);color:#475569}
+
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(-3px,2px) scale(1.002)}100%{transform:translate(0,0) scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideIn{from{opacity:0;transform:translateX(-20px)}to{opacity:1;transform:translateX(0)}}
+@keyframes checkPop{0%{transform:scale(0);opacity:0}60%{transform:scale(1.2)}100%{transform:scale(1);opacity:1}}
+@keyframes spinProcess{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.animate-drift{animation:drift 14s ease-in-out infinite}
+
+.overlay-msg{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border:1px solid rgba(146,176,214,.25);border-radius:999px;padding:12px 32px;font-size:15px;font-weight:600;color:var(--fg);letter-spacing:.02em;white-space:nowrap;box-shadow:0 8px 24px rgba(40,78,118,.06);opacity:0;animation:fadeUp .8s ease forwards}
+
+.step-indicator{display:flex;gap:16px;margin-bottom:16px}
+.step-dot{display:flex;align-items:center;gap:8px}
+.step-dot .dot{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;border:2px solid rgba(203,213,225,.5);color:#94a3b8;background:#fff;transition:all .4s}
+.step-dot.active .dot{border-color:var(--amber);background:var(--amber);color:#fff;box-shadow:0 3px 12px rgba(245,158,11,.25)}
+.step-dot.done .dot{border-color:var(--emerald);background:var(--emerald);color:#fff}
+.step-dot .label{font-size:12px;font-weight:600;color:#94a3b8}
+.step-dot.active .label{color:var(--fg)}
+.step-dot.done .label{color:var(--emerald)}
+.step-connector{width:32px;height:2px;background:rgba(203,213,225,.4);align-self:center;margin:0 -2px}
+
+.upload-zone{border:2px dashed rgba(8,145,178,.35);border-radius:18px;padding:40px;text-align:center;background:linear-gradient(180deg,rgba(240,249,255,.6),rgba(255,255,255,.8));transition:all .4s}
+.upload-zone.active{border-color:var(--amber);background:rgba(255,251,235,.5);border-style:solid}
+.upload-zone.done{border-color:var(--emerald);background:rgba(236,253,245,.4);border-style:solid}
+
+.validation-item{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,.8);border:1px solid rgba(203,213,225,.3);opacity:0}
+.validation-item.show{animation:slideIn .5s ease forwards}
+.validation-item .check{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff;transform:scale(0);opacity:0}
+.validation-item.show .check{animation:checkPop .4s ease forwards}
+.check-ok{background:var(--emerald)}
+.check-warn{background:var(--amber)}
+
+.progress-bar{height:5px;border-radius:999px;background:rgba(203,213,225,.3);overflow:hidden;margin-top:6px}
+.progress-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--emerald),#34d399)}
+
+.report-section{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;background:rgba(240,249,255,.5);border:1px solid rgba(191,219,254,.25);opacity:0}
+.report-section.show{animation:fadeUp .5s ease forwards}
+
+.pdf-page{background:#fff;border-radius:10px;border:1px solid rgba(203,213,225,.4);box-shadow:0 6px 18px rgba(40,78,118,.05);padding:24px;position:relative}
+.pdf-stamp{position:absolute;top:14px;right:14px;border:2px solid var(--emerald);border-radius:8px;padding:4px 10px;color:var(--emerald);font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transform:rotate(4deg)}
+
+.grid-bg{background-image:radial-gradient(rgba(143,198,255,.2) 1px,transparent 1px);background-size:16px 16px}
+</style>
+</head>
+<body>
+
+<!-- ===== SCENE 1: Upload ===== -->
+<div class="scene active" id="scene1">
+<div style="width:1400px;padding:24px 40px 50px" class="animate-drift">
+  <div class="step-indicator">
+    <div class="step-dot active" id="s1-step1"><div class="dot">1</div><div class="label">Cargar CSV / Upload</div></div>
+    <div class="step-connector"></div>
+    <div class="step-dot" id="s1-step2"><div class="dot">2</div><div class="label">Analisis ALM</div></div>
+    <div class="step-connector"></div>
+    <div class="step-dot" id="s1-step3"><div class="dot">3</div><div class="label">Informe bilingüe</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start">
+    <div>
+      <div class="upload-zone" id="uploadZone">
+        <div style="margin-bottom:14px">
+          <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="1.5" style="margin:0 auto">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <p class="fd" style="font-size:18px;font-weight:700;color:var(--fg)" id="uploadTitle">Arrastre su hoja de balance aqui</p>
+        <p style="font-size:13px;color:#64748b;margin-top:6px" id="uploadSub">CSV, XLSX — hasta 50MB</p>
+        <div id="uploadFile" style="display:none;margin-top:14px">
+          <div style="display:flex;align-items:center;gap:10px;justify-content:center">
+            <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div style="text-align:left">
+              <div class="fd" style="font-size:14px;font-weight:700">balance_cooperativa_Q1_2026.csv</div>
+              <div style="font-size:11px;color:#64748b">2.4 MB — 847 rows</div>
+            </div>
+          </div>
+          <div class="progress-bar" style="margin-top:12px;width:260px;margin-left:auto;margin-right:auto">
+            <div class="progress-fill" id="uploadProgress" style="width:0;transition:width 1.5s ease"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label" style="margin-bottom:10px">Validacion del archivo / File validation</p>
+      <div style="display:flex;flex-direction:column;gap:6px" id="validationList">
+        <div class="validation-item" id="v1"><div class="check check-ok">✓</div><div><div style="font-weight:600;font-size:12px">Formato CSV valido</div><div style="font-size:10px;color:#64748b">Valid CSV format</div></div></div>
+        <div class="validation-item" id="v2"><div class="check check-ok">✓</div><div><div style="font-weight:600;font-size:12px">847 filas, 24 columnas</div><div style="font-size:10px;color:#64748b">847 rows, 24 columns</div></div></div>
+        <div class="validation-item" id="v3"><div class="check check-ok">✓</div><div><div style="font-weight:600;font-size:12px">Columnas requeridas presentes</div><div style="font-size:10px;color:#64748b">Required columns present</div></div></div>
+        <div class="validation-item" id="v4"><div class="check check-ok">✓</div><div><div style="font-weight:600;font-size:12px">Activos totales: $342.8M</div><div style="font-size:10px;color:#64748b">Total assets: $342.8M</div></div></div>
+        <div class="validation-item" id="v5"><div class="check check-ok">✓</div><div><div style="font-weight:600;font-size:12px">Periodo fiscal: Q1 2026</div><div style="font-size:10px;color:#64748b">Fiscal period: Q1 2026</div></div></div>
+        <div class="validation-item" id="v6"><div class="check check-warn">!</div><div><div style="font-weight:600;font-size:12px">2 valores faltantes imputados</div><div style="font-size:10px;color:#64748b">2 missing values imputed</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="overlay-msg" style="animation-delay:6s">Cargue su balance y valide en segundos.</div>
+</div>
+
+<!-- ===== SCENE 2: ALM Analysis ===== -->
+<div class="scene" id="scene2">
+<div style="width:1500px;padding:24px 40px 50px" class="animate-drift">
+  <div class="step-indicator" style="margin-bottom:12px">
+    <div class="step-dot done"><div class="dot">✓</div><div class="label">CSV subido</div></div>
+    <div class="step-connector" style="background:var(--emerald)"></div>
+    <div class="step-dot active"><div class="dot">2</div><div class="label">Analisis ALM</div></div>
+    <div class="step-connector"></div>
+    <div class="step-dot"><div class="dot">3</div><div class="label">Informe</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:14px">
+    <div class="stat-card stat-accent"><div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:4px">Activos Totales</div><div class="fd" style="font-size:20px;font-weight:700">$342.8M</div><div style="font-size:10px;color:#64748b;margin-top:2px">Total Assets</div></div>
+    <div class="stat-card stat-accent"><div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:4px">Capital Neto</div><div class="fd" style="font-size:20px;font-weight:700;color:#047857">12.4%</div><div style="font-size:10px;color:#64748b;margin-top:2px">Net Worth Ratio</div></div>
+    <div class="stat-card stat-accent"><div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:4px">NIM</div><div class="fd" style="font-size:20px;font-weight:700">3.86%</div><div style="font-size:10px;color:#64748b;margin-top:2px">Net Interest Margin</div></div>
+    <div class="stat-card stat-accent"><div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:4px">Liquidez</div><div class="fd" style="font-size:20px;font-weight:700;color:var(--amber)">28.1%</div><div style="font-size:10px;color:#64748b;margin-top:2px">Liquidity Ratio</div></div>
+    <div class="stat-card stat-accent"><div style="font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#64748b;margin-bottom:4px">Morosidad</div><div class="fd" style="font-size:20px;font-weight:700;color:#be185d">4.2%</div><div style="font-size:10px;color:#64748b;margin-top:2px">Delinquency Rate</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:16px">
+    <div class="panel" style="padding:16px">
+      <div class="section-label" style="margin-bottom:10px">Analisis de Brecha / Gap Analysis</div>
+      <div class="grid-bg" style="border-radius:10px;padding:10px;height:220px;display:flex;align-items:flex-end">
+        <svg width="100%" height="200" viewBox="0 0 700 200">
+          <defs>
+            <linearGradient id="gapPos" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#10b981" stop-opacity=".25"/><stop offset="100%" stop-color="#10b981" stop-opacity="0"/></linearGradient>
+            <linearGradient id="gapNeg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f43f5e" stop-opacity="0"/><stop offset="100%" stop-color="#f43f5e" stop-opacity=".2"/></linearGradient>
+          </defs>
+          <text x="0" y="12" fill="#94a3b8" font-size="9" font-family="Space Grotesk">Excedente</text>
+          <text x="0" y="195" fill="#94a3b8" font-size="9" font-family="Space Grotesk">Deficit</text>
+          <line x1="0" y1="100" x2="700" y2="100" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="4"/>
+          <text x="35" y="192" fill="#94a3b8" font-size="8" text-anchor="middle">0-30d</text>
+          <text x="140" y="192" fill="#94a3b8" font-size="8" text-anchor="middle">30-90d</text>
+          <text x="245" y="192" fill="#94a3b8" font-size="8" text-anchor="middle">90-180d</text>
+          <text x="350" y="192" fill="#94a3b8" font-size="8" text-anchor="middle">180d-1y</text>
+          <text x="455" y="192" fill="#94a3b8" font-size="8" text-anchor="middle">1-3y</text>
+          <text x="560" y="192" fill="#94a3b8" font-size="8" text-anchor="middle">3-5y</text>
+          <text x="665" y="192" fill="#94a3b8" font-size="8" text-anchor="middle">5y+</text>
+          <rect x="10" y="50" width="50" height="50" rx="5" fill="url(#gapPos)" stroke="#10b981" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".5s" fill="freeze"/></rect>
+          <rect x="115" y="60" width="50" height="40" rx="5" fill="url(#gapPos)" stroke="#10b981" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".7s" fill="freeze"/></rect>
+          <rect x="220" y="72" width="50" height="28" rx="5" fill="url(#gapPos)" stroke="#10b981" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin=".9s" fill="freeze"/></rect>
+          <rect x="325" y="100" width="50" height="35" rx="5" fill="url(#gapNeg)" stroke="#f43f5e" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin="1.1s" fill="freeze"/></rect>
+          <rect x="430" y="100" width="50" height="55" rx="5" fill="url(#gapNeg)" stroke="#f43f5e" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin="1.3s" fill="freeze"/></rect>
+          <rect x="535" y="100" width="50" height="42" rx="5" fill="url(#gapNeg)" stroke="#f43f5e" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin="1.5s" fill="freeze"/></rect>
+          <rect x="640" y="100" width="50" height="22" rx="5" fill="url(#gapNeg)" stroke="#f43f5e" stroke-width="1.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur=".4s" begin="1.7s" fill="freeze"/></rect>
+        </svg>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel" style="padding:0;overflow:hidden;margin-bottom:10px">
+        <div style="padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span class="section-label">Ratios COSSEC</span><span class="chip chip-pos">12 / 12 calculados</span></div>
+        <table class="tbl"><thead><tr><th>Ratio</th><th>Valor</th><th>Min</th><th>Estado</th></tr></thead>
+        <tbody>
+        <tr><td style="font-weight:600">Capital Neto</td><td class="fd" style="font-weight:700">12.4%</td><td>6.0%</td><td><span class="chip chip-pos">Pass</span></td></tr>
+        <tr><td style="font-weight:600">Liquidez</td><td class="fd" style="font-weight:700;color:var(--amber)">28.1%</td><td>15.0%</td><td><span class="chip chip-pos">Pass</span></td></tr>
+        <tr><td style="font-weight:600">Morosidad</td><td class="fd" style="font-weight:700;color:#be185d">4.2%</td><td>5.0%</td><td><span class="chip chip-pos">Pass</span></td></tr>
+        <tr><td style="font-weight:600">Provision</td><td class="fd" style="font-weight:700">98.6%</td><td>100%</td><td><span class="chip chip-warn">Near</span></td></tr>
+        </tbody></table>
+      </div>
+      <div class="panel" style="padding:12px 14px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <div style="width:22px;height:22px;border-radius:50%;border:2px solid var(--emerald);border-top-color:transparent;animation:spinProcess 1s linear infinite"></div>
+          <span class="fd" style="font-size:12px;font-weight:600;color:var(--emerald)" id="processStatus">Procesando sensitividad de tasas...</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="analysisProgress" style="width:0;transition:width 6s linear"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="overlay-msg" style="animation-delay:5s">12 ratios COSSEC calculados automaticamente.</div>
+</div>
+
+<!-- ===== SCENE 3: Bilingual Report ===== -->
+<div class="scene" id="scene3">
+<div style="width:1500px;padding:24px 40px 50px" class="animate-drift">
+  <div class="step-indicator" style="margin-bottom:12px">
+    <div class="step-dot done"><div class="dot">✓</div><div class="label">CSV subido</div></div>
+    <div class="step-connector" style="background:var(--emerald)"></div>
+    <div class="step-dot done"><div class="dot">✓</div><div class="label">Analisis ALM</div></div>
+    <div class="step-connector" style="background:var(--emerald)"></div>
+    <div class="step-dot active"><div class="dot">3</div><div class="label">Informe bilingüe</div></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:24px;align-items:start">
+    <div>
+      <div class="pdf-page">
+        <div class="pdf-stamp">COSSEC-compliant</div>
+        <div style="margin-bottom:18px">
+          <div class="fd" style="font-size:11px;font-weight:600;letter-spacing:.12em;color:#64748b;text-transform:uppercase">Informe ALM — Q1 2026</div>
+        </div>
+        <div style="border-bottom:2px solid rgba(8,145,178,.2);padding-bottom:14px;margin-bottom:14px">
+          <div class="fd" style="font-size:18px;font-weight:700;line-height:1.4">Cooperativa de Ahorro y Credito<br>Modelo PR</div>
+          <div style="font-size:11px;color:#64748b;margin-top:4px">Periodo: Enero — Marzo 2026</div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
+          <div style="padding:10px;border-radius:10px;background:rgba(240,249,255,.5);border:1px solid rgba(191,219,254,.2)">
+            <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--elb);margin-bottom:6px">Español</div>
+            <div style="font-size:11px;line-height:1.6;color:#334155">
+              El capital neto de la cooperativa se situa en 12.4%, superando el minimo regulatorio de 6.0% establecido por COSSEC.
+            </div>
+          </div>
+          <div style="padding:10px;border-radius:10px;background:rgba(255,251,235,.4);border:1px solid rgba(253,230,138,.2)">
+            <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--amber);margin-bottom:6px">English</div>
+            <div style="font-size:11px;line-height:1.6;color:#334155">
+              The cooperative's net worth stands at 12.4%, exceeding the 6.0% regulatory minimum established by COSSEC.
+            </div>
+          </div>
+        </div>
+        <div style="display:flex;gap:6px;font-size:10px;color:#94a3b8"><span>Pagina 1 de 28</span><span>·</span><span>Generado automaticamente</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px">
+        <div>
+          <p class="section-label">Secciones del informe / Report sections</p>
+          <p style="font-size:11px;color:#64748b;margin-top:4px">28 paginas — Español e Ingles</p>
+        </div>
+        <div style="display:flex;gap:8px">
+          <button class="btn-primary">Descargar PDF ↓</button>
+          <button class="btn-secondary">Compartir ↗</button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:7px" id="reportSections">
+        <div class="report-section" id="r1"><div style="width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><div style="flex:1"><div style="font-weight:600;font-size:12px">Resumen Ejecutivo / Executive Summary</div><div style="font-size:10px;color:#64748b">pp. 1-3</div></div><span class="chip chip-pos">Completo</span></div>
+        <div class="report-section" id="r2"><div style="width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div><div style="flex:1"><div style="font-weight:600;font-size:12px">Ratios COSSEC / COSSEC Ratios</div><div style="font-size:10px;color:#64748b">pp. 4-8</div></div><span class="chip chip-pos">Completo</span></div>
+        <div class="report-section" id="r3"><div style="width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/></svg></div><div style="flex:1"><div style="font-weight:600;font-size:12px">Analisis de Brecha / Gap Analysis</div><div style="font-size:10px;color:#64748b">pp. 9-14</div></div><span class="chip chip-pos">Completo</span></div>
+        <div class="report-section" id="r4"><div style="width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div style="flex:1"><div style="font-weight:600;font-size:12px">Sensitividad de Tasas / Rate Sensitivity</div><div style="font-size:10px;color:#64748b">pp. 15-20</div></div><span class="chip chip-pos">Completo</span></div>
+        <div class="report-section" id="r5"><div style="width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg,#0891b2,#22d3ee);display:flex;align-items:center;justify-content:center"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div style="flex:1"><div style="font-weight:600;font-size:12px">Riesgo y Recomendaciones / Risk & Recommendations</div><div style="font-size:10px;color:#64748b">pp. 21-28</div></div><span class="chip chip-pos">Completo</span></div>
+      </div>
+
+      <div style="margin-top:12px;padding:12px;border-radius:12px;border:1px solid rgba(167,243,208,.6);background:rgba(236,253,245,.5)">
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="width:22px;height:22px;border-radius:50%;background:var(--emerald);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:800">✓</div>
+          <div>
+            <div style="font-weight:700;font-size:12px;color:#047857">Informe listo para comite ALCO</div>
+            <div style="font-size:10px;color:#064e3b">Report ready for ALCO committee</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="overlay-msg" style="animation-delay:5s">De balance a informe bilingüe — en minutos, no semanas.</div>
+</div>
+
+<script>
+// ─── Responsive scaling ───
+function scaleToFit(){
+  const dw=1920,dh=1080;
+  const vw=window.innerWidth,vh=window.innerHeight;
+  const s=Math.min(vw/dw,vh/dh);
+  document.body.style.transform='scale('+s+')';
+  document.documentElement.style.width=vw+'px';
+  document.documentElement.style.height=vh+'px';
+}
+scaleToFit();
+window.addEventListener('resize',scaleToFit);
+
+const scenes=['scene1','scene2','scene3'];
+const durations=[10000,10000,12000];
+let current=0;
+
+function showScene(idx){
+  scenes.forEach((id,i)=>{
+    const el=document.getElementById(id);
+    if(i===idx){el.classList.add('active')}else{el.classList.remove('active')}
+  });
+  const overlay=document.getElementById(scenes[idx]).querySelector('.overlay-msg');
+  if(overlay){overlay.style.animation='none';overlay.offsetHeight;overlay.style.animation='';}
+}
+
+function nextScene(){
+  current++;
+  if(current>=scenes.length){
+    current=0;
+    showScene(0);
+    resetScene1();
+    startScene1Animations();
+    setTimeout(nextScene,durations[0]);
+    return;
+  }
+  showScene(current);
+  if(current===1) startScene2Animations();
+  if(current===2) startScene3Animations();
+  setTimeout(nextScene,durations[current]);
+}
+
+function resetScene1(){
+  document.getElementById('uploadZone').className='upload-zone';
+  document.getElementById('uploadFile').style.display='none';
+  document.getElementById('uploadTitle').textContent='Arrastre su hoja de balance aqui';
+  document.getElementById('uploadTitle').style.fontSize='18px';
+  document.getElementById('uploadSub').textContent='CSV, XLSX — hasta 50MB';
+  document.getElementById('uploadSub').style.color='#64748b';
+  document.getElementById('uploadProgress').style.transition='none';
+  document.getElementById('uploadProgress').style.width='0';
+  ['v1','v2','v3','v4','v5','v6'].forEach(id=>{
+    document.getElementById(id).classList.remove('show');
+  });
+}
+
+function startScene1Animations(){
+  setTimeout(()=>{
+    document.getElementById('uploadZone').classList.add('active');
+    document.getElementById('uploadFile').style.display='block';
+    document.getElementById('uploadTitle').textContent='balance_cooperativa_Q1_2026.csv';
+    document.getElementById('uploadTitle').style.fontSize='14px';
+    document.getElementById('uploadSub').textContent='Subiendo archivo...';
+    setTimeout(()=>{
+      document.getElementById('uploadProgress').style.transition='width 1.5s ease';
+      document.getElementById('uploadProgress').style.width='100%';
+    },100);
+  },2000);
+
+  setTimeout(()=>{
+    document.getElementById('uploadZone').classList.remove('active');
+    document.getElementById('uploadZone').classList.add('done');
+    document.getElementById('uploadSub').textContent='Archivo cargado exitosamente';
+    document.getElementById('uploadSub').style.color='#047857';
+  },4000);
+
+  const delays=[4200,4700,5200,5700,6200,6700];
+  ['v1','v2','v3','v4','v5','v6'].forEach((id,i)=>{
+    setTimeout(()=>{document.getElementById(id).classList.add('show')},delays[i]);
+  });
+}
+
+function startScene2Animations(){
+  const el=document.getElementById('analysisProgress');
+  el.style.transition='none';el.style.width='0';
+  setTimeout(()=>{el.style.transition='width 6s linear';el.style.width='100%'},200);
+  const statuses=[
+    {text:'Procesando sensitividad de tasas...',t:0},
+    {text:'Calculando ratios COSSEC...',t:2000},
+    {text:'Ejecutando analisis de brecha...',t:4000},
+    {text:'Generando visualizaciones...',t:6000},
+    {text:'Analisis completo ✓',t:8000}
+  ];
+  statuses.forEach(s=>{
+    setTimeout(()=>{
+      document.getElementById('processStatus').textContent=s.text;
+      if(s.text.includes('✓')) document.getElementById('processStatus').style.fontWeight='700';
+      else document.getElementById('processStatus').style.fontWeight='600';
+    },s.t);
+  });
+}
+
+function startScene3Animations(){
+  ['r1','r2','r3','r4','r5'].forEach(id=>{
+    document.getElementById(id).classList.remove('show');
+  });
+  const delays=[400,900,1400,1900,2400];
+  ['r1','r2','r3','r4','r5'].forEach((id,i)=>{
+    setTimeout(()=>{document.getElementById(id).classList.add('show')},delays[i]);
+  });
+}
+
+showScene(0);
+startScene1Animations();
+setTimeout(nextScene,durations[0]);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{
+  "pdMultipliers": {
+    "baseline": 1,
+    "adverse": 2.1,
+    "severely_adverse": 3.6
+  },
+  "scenarioWeights": {
+    "baseline": 0.45,
+    "adverse": 0.35,
+    "severely_adverse": 0.2
+  },
+  "overlayLabel": "PR",
+  "basis": "derived-from-macro",
+  "macroStressIndex": 0,
+  "inputs": {
+    "prUnemploymentPct": 5.6,
+    "prHpiYoyPct": 14.95,
+    "prNetMigrationPct": -0.09,
+    "asOf": "2026-07-09"
+  },
+  "provenance": "Overlay derivado de datos macro de PR (desempleo 5.6%, HPI 14.95% i/a, migración neta -0.09%; 2026-07-09); índice de estrés macro 0. Coeficientes PROVISIONALES — pendiente validación COSSEC/NCUA. / Overlay derived from PR macro data (unemployment 5.6%, HPI 14.95% YoY, net migration -0.09%; 2026-07-09); macro-stress index 0. Coefficients PROVISIONAL — pending COSSEC/NCUA validation. Fuente: snapshot comprometido pr-macro-snapshot (verificado 2026-07-09; BLS LAUS, FHFA HPI, Census Vintage 2025 — procedencia por serie en el módulo). / Source: committed pr-macro-snapshot (verified 2026-07-09; per-series provenance in the module).",
+  "gaps": [
+    {
+      "field": "cecl.macroOverlay",
+      "reason": "COSSEC_INPUTS_INSUFFICIENT",
+      "severity": "WARNING",
+      "action": "Los multiplicadores PD y pesos de escenario fueron DERIVADOS de datos macro de PR (índice de estrés 0); la calibración (coeficientes de sensibilidad, estado de referencia) es PROVISIONAL — confirmar con COSSEC/NCUA o calibrar con datos propios. / The PD multipliers and scenario weights were DERIVED from PR macro data (stress index 0); the calibration (sensitivity coefficients, reference state) is PROVISIONAL — confirm with COSSEC/NCUA or calibrate to institution data.",
+      "context": {
+        "basis": "derived-from-macro",
+        "macroStressIndex": 0,
+        "asOf": "2026-07-09"
+      }
+    }
+  ]
+}

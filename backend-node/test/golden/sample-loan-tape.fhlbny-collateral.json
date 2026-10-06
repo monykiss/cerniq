@@ -1,0 +1,87 @@
+{
+  "status": "ok",
+  "modeled": true,
+  "asOfDate": "2026-06-30",
+  "totalBalance": 773000,
+  "eligible": {
+    "loanCount": 4,
+    "balance": 635000,
+    "lendingValue": 476250,
+    "byClass": [
+      {
+        "collateralClass": "RESIDENTIAL_1_4",
+        "loanCount": 4,
+        "balance": 635000,
+        "haircutPct": 25,
+        "lendingValue": 476250
+      }
+    ]
+  },
+  "ineligible": {
+    "loanCount": 6,
+    "balance": 138000,
+    "byReason": [
+      {
+        "reason": "not_an_eligible_class",
+        "loanCount": 2,
+        "balance": 59000
+      },
+      {
+        "reason": "delinquent_60dpd_or_more",
+        "loanCount": 2,
+        "balance": 46000
+      },
+      {
+        "reason": "unclassifiable_collateral",
+        "loanCount": 2,
+        "balance": 33000
+      }
+    ]
+  },
+  "capacity": {
+    "totalLendingValue": 476250,
+    "whatIfs": [
+      {
+        "ladderPct": 25,
+        "advance": 119062.5,
+        "excessCollateral": 357187.5,
+        "utilizationPct": 25
+      },
+      {
+        "ladderPct": 50,
+        "advance": 238125,
+        "excessCollateral": 238125,
+        "utilizationPct": 50
+      },
+      {
+        "ladderPct": 75,
+        "advance": 357187.5,
+        "excessCollateral": 119062.5,
+        "utilizationPct": 75
+      },
+      {
+        "ladderPct": 100,
+        "advance": 476250,
+        "excessCollateral": 0,
+        "utilizationPct": 100
+      }
+    ]
+  },
+  "gaps": [
+    {
+      "field": "fhlbny.collateral.modeled",
+      "reason": "STALE_SNAPSHOT",
+      "severity": "WARNING",
+      "action": "Análisis MODELADO: el formato exacto COL-121 y la tabla oficial de recortes de FHLBNY NO están verificados (Bible §9.13) — los recortes (1-4 fam 25%, HELOC 40%, multifam 35%, CRE 45%) y el techo de mora (60 días) son configuración PROVISIONAL divulgada. Obtener la guía COL-012 / Capital Plan de FHLBNY antes de usar en una solicitud. / MODELED analysis: the exact COL-121 layout and official FHLBNY haircut schedule are UNVERIFIED (Bible §9.13) — the haircuts and the 60-day delinquency ceiling are DISCLOSED PROVISIONAL config. Obtain the FHLBNY COL-012 guide / Capital Plan before using in an application.",
+      "context": {
+        "haircuts": {
+          "RESIDENTIAL_1_4": 0.25,
+          "HELOC": 0.4,
+          "MULTIFAMILY": 0.35,
+          "COMMERCIAL_RE": 0.45
+        },
+        "maxDelinquencyDays": 60
+      }
+    }
+  ]
+}

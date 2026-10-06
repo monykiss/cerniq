@@ -1,0 +1,15 @@
+{
+  "name": "cerniq",
+  "version": "1.0.0",
+  "private": true,
+  "description": "CERNIQ — bilingual ALM and COSSEC compliance platform (review snapshot)",
+  "license": "SEE LICENSE IN LICENSE",
+  "scripts": {
+    "lint:backend": "cd backend-node && npm run lint",
+    "lint:frontend": "cd frontend && npm run lint",
+    "test:backend": "cd backend-node && npm test",
+    "test:frontend": "cd frontend && npm test",
+    "build:backend": "cd backend-node && npm run build",
+    "build:frontend": "cd frontend && npm run build"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "$schema": "./_schema.ts#InstitutionFixture",
+  "seedKey": "pr-family-office-demo",
+  "name": "Caribbean Family Capital",
+  "type": "family_office",
+  "totalAssets": 45,
+  "currency": "USD",
+  "reportingDate": "2026-01-31",
+  "primaryRegulator": "SEC",
+  "fiscalYearEnd": "december",
+  "preferredLanguage": "en",
+  "items": [
+    {
+      "category": "asset",
+      "subcategory": "investment_securities",
+      "name": "Equity Portfolio",
+      "balance": 18,
+      "rate": 2.1,
+      "duration": 0.0,
+      "rateType": "variable"
+    },
+    {
+      "category": "asset",
+      "subcategory": "investment_securities",
+      "name": "Fixed Income",
+      "balance": 13.5,
+      "rate": 4.5,
+      "duration": 4.0,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "other_assets",
+      "name": "Real Estate Holdings",
+      "balance": 9,
+      "rate": 3.5,
+      "duration": 8.0,
+      "rateType": "fixed"
+    },
+    {
+      "category": "asset",
+      "subcategory": "cash_equivalents",
+      "name": "Cash & T-Bills",
+      "balance": 4.5,
+      "rate": 5.1,
+      "duration": 0.1,
+      "rateType": "variable"
+    },
+    {
+      "category": "liability",
+      "subcategory": "borrowings",
+      "name": "Margin Facility",
+      "balance": 4.5,
+      "rate": 6.5,
+      "duration": 0.25,
+      "rateType": "variable"
+    },
+    {
+      "category": "liability",
+      "subcategory": "borrowings",
+      "name": "Real Estate Mortgage",
+      "balance": 4.5,
+      "rate": 5.8,
+      "duration": 15.0,
+      "rateType": "fixed"
+    }
+  ],
+  "liquidity": {
+    "date": "2026-01-31",
+    "hqlaLevel1": 4.5,
+    "hqlaLevel2": 0,
+    "cashOutflows": 2.25,
+    "cashInflows": 0,
+    "lcr": 200.0,
+    "nsfr": 150.0
+  }
+}

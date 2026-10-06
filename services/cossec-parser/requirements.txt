@@ -1,0 +1,20 @@
+# CERNIQ COSSEC Parser — Dependencies
+# Python 3.11+
+
+# Web framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# File upload handling
+python-multipart
+
+# PDF extraction
+PyMuPDF>=1.23.0
+
+# Data validation
+pydantic>=2.5.0
+
+# Testing
+pytest>=7.4.0
+pytest-asyncio>=0.23.0
+httpx>=0.26.0

@@ -1,0 +1,18 @@
+{
+  "id": "alm-007",
+  "name": "Early warning — composite score in amber zone",
+  "agentId": "ALM_DECISION",
+  "description": "EWS composite score 65/100 (amber threshold: 60). Three leading indicators flashing: loan delinquency trend, deposit erosion rate, NIM compression. No single metric is critical but the combination warrants pre-crisis action. Tests that agent synthesizes multiple weak signals into an actionable finding.",
+  "input": {
+    "balanceSheetId": "golden-007",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "topRiskDomain": null,
+    "healthScoreRange": [55, 70],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "getEWS"],
+    "requiresBilingual": true
+  }
+}

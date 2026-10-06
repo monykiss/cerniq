@@ -1,0 +1,92 @@
+{
+  "name": "cerniq-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build --webpack",
+    "start": "next start",
+    "lint": "NODE_OPTIONS=--max-old-space-size=8192 eslint app components hooks lib types instrumentation.ts instrumentation-client.ts next.config.ts playwright.config.ts proxy.ts vitest.config.ts eslint.config.mjs && node scripts/verify-alm-registry.mjs && node scripts/verify-d1-no-silent-fallback.mjs && node scripts/verify-no-orphan-tests.mjs && node scripts/verify-rule-12-crypto-randomness.mjs && node scripts/verify-i18n-parity.mjs && node scripts/verify-alm-endpoint-contract.mjs && node scripts/verify-alm-endpoint-contract.mjs --self-test && tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "verify:alm": "node scripts/verify-alm-registry.mjs",
+    "verify:d1-no-silent-fallback": "node scripts/verify-d1-no-silent-fallback.mjs",
+    "verify:no-orphan-tests": "node scripts/verify-no-orphan-tests.mjs",
+    "verify:bundle-budget": "node scripts/verify-bundle-budget.mjs",
+    "verify:rule-12-crypto-randomness": "node scripts/verify-rule-12-crypto-randomness.mjs",
+    "verify:i18n-parity": "node scripts/verify-i18n-parity.mjs",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage --maxWorkers=1",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:critical": "PLAYWRIGHT_BROWSERS_PATH=0 sh -c 'rm -rf .next && playwright test e2e/production-critical.spec.ts'",
+    "test:e2e:preview": "sh -c 'test -n \"$PLAYWRIGHT_BASE_URL\" || { echo \"PLAYWRIGHT_BASE_URL is required\" >&2; exit 1; }; test -n \"$PLAYWRIGHT_BACKEND_URL\" || { echo \"PLAYWRIGHT_BACKEND_URL is required\" >&2; exit 1; }; PLAYWRIGHT_SKIP_WEBSERVER=1 PLAYWRIGHT_ENABLE_CHECKOUT_SMOKE=1 PLAYWRIGHT_MOCK_CHECKOUT=1 playwright test e2e/production-critical.spec.ts'",
+    "test:e2e:ui": "playwright test --ui",
+    "a11y:routes": "node e2e/a11y-sweep/discover-routes.mjs",
+    "a11y:sweep": "A11Y_AUTH_SETUP=1 playwright test e2e/a11y-sweep/ --reporter=list",
+    "a11y:sweep:public": "playwright test e2e/a11y-sweep/a11y-sweep.spec.ts --reporter=list",
+    "a11y:sweep:authed": "A11Y_AUTH_SETUP=1 playwright test e2e/a11y-sweep/a11y-sweep-authed.spec.ts --reporter=list",
+    "a11y:baseline": "A11Y_AUTH_SETUP=1 A11Y_WRITE_BASELINE=1 playwright test e2e/a11y-sweep/ --reporter=list",
+    "a11y:report": "node e2e/a11y-sweep/render-report.mjs"
+  },
+  "dependencies": {
+    "@sentry/nextjs": "^10.46.0",
+    "@supabase/supabase-js": "^2.110.2",
+    "@tanstack/react-query": "^5.100.10",
+    "@types/dompurify": "^3.0.5",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
+    "axios": "^1.16.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "dompurify": "^3.4.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^0.563.0",
+    "next": "^16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "react-dropzone": "^14.4.0",
+    "recharts": "^3.7.0",
+    "socket.io-client": "^4.8.3",
+    "tailwind-merge": "^3.4.0",
+    "web-vitals": "^5.2.0",
+    "zustand": "^5.0.10"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.52.0",
+    "@tailwindcss/postcss": "^4",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/coverage-v8": "^4.1.2",
+    "eslint": "^9",
+    "eslint-config-next": "^16.2.4",
+    "jsdom": "^29.0.1",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^4.1.2"
+  },
+  "ignoreScripts": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "trustedDependencies": [
+    "sharp",
+    "unrs-resolver"
+  ],
+  "overrides": {
+    "dompurify": "$dompurify",
+    "socket.io-parser": "4.2.7",
+    "uuid": "14.0.0",
+    "@sentry/webpack-plugin": "5.2.0",
+    "postcss": "^8.5.10",
+    "@next/eslint-plugin-next": {
+      "fast-glob": "npm:tinyglobby@^0.2.17"
+    },
+    "eslint-plugin-react-hooks": "7.0.1"
+  }
+}

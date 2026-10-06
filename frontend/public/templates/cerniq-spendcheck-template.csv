@@ -1,0 +1,16 @@
+date,invoice_number,vendor,description,amount,currency,category,status
+2026-01-15,INV-001,LUMA Energy PR,Monthly electric bill Q1,12500.00,USD,utilities,PAID
+2026-01-20,INV-002,Triple-S Management,Health insurance premium Jan,8750.00,USD,insurance,PAID
+2026-01-22,INV-003,Claro PR,Internet and phone service,1250.00,USD,telecom,PAID
+2026-02-01,INV-004,BDO Puerto Rico,Q4 audit fees,15000.00,USD,audit,PAID
+2026-02-10,INV-005,Office Depot PR,Office supplies and toner,850.00,USD,supplies,PAID
+2026-02-15,INV-006,Securitas PR,Security guard services Feb,4200.00,USD,security,PAID
+2026-02-20,INV-007,LUMA Energy PR,Monthly electric bill Feb,13100.00,USD,utilities,PAID
+2026-02-28,INV-008,Popular Auto Insurance,Fleet insurance Q1,6500.00,USD,insurance,PAID
+2026-03-01,INV-009,Ricoh PR,Copier lease and maintenance,1875.00,USD,maintenance,PAID
+2026-03-05,INV-010,Liberty Business PR,ATM network connectivity,3200.00,USD,telecom,PAID
+2026-03-10,INV-011,Caribbean Cleaning Services,Janitorial services Mar,2400.00,USD,maintenance,PAID
+2026-03-12,INV-012,ADP Payroll Services,Payroll processing Q1,5600.00,USD,other,PAID
+2026-03-15,INV-013,LUMA Energy PR,Monthly electric bill Mar,12800.00,USD,utilities,PENDING
+2026-03-17,INV-014,Evertec Inc,Card processing fees Q1,9450.00,USD,other,PENDING
+2026-03-20,INV-015,Martinez Law Office,Legal advisory retainer Q1,7500.00,USD,audit,PENDING

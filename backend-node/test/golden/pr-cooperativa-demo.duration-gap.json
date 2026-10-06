@@ -1,0 +1,9 @@
+{
+  "assetDuration": 4.57,
+  "liabilityDuration": 1.09,
+  "durationGap": 3.59,
+  "riskProfile": "asset-sensitive",
+  "assetConvexity": 38.4699,
+  "liabilityConvexity": 2.3458,
+  "leverageAdjustedDurationGap": 3.5864
+}

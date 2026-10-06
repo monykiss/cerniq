@@ -1,0 +1,16 @@
+{
+  "id": "copilot-001",
+  "name": "Rate shock +200bps scenario question",
+  "agentId": "CFO_COPILOT",
+  "description": "CFO asks 'What happens if rates rise 200bps?' Agent must call runRateShock with [200], reference NII impact in dollar terms, cite the institution's IRR policy limit, and suggest specific restructuring actions. Message must be ≤300 words. Must produce exactly 4 follow-up suggestions. Tests the core copilot value proposition.",
+  "input": {
+    "query": "What happens if rates rise 200bps?",
+    "institutionId": "golden-inst-001",
+    "language": "en"
+  },
+  "expectedFindings": {
+    "minToolsCalled": 2,
+    "requiredTools": ["runRateShock"],
+    "requiresBilingual": false
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "alm-002",
+  "name": "Liquidity stress, capital erosion",
+  "agentId": "ALM_DECISION",
+  "description": "LCR below 115% internal policy, NSFR at 102%. Net worth ratio declining 30bps QoQ. Deposit outflows in checking accounts. Stress survival 18 days (below 30-day threshold).",
+  "input": {
+    "balanceSheetId": "golden-002",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "topRiskDomain": "Liquidity Risk",
+    "healthScoreRange": [40, 60],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "getLCR", "getNSFR", "getCapitalAdequacy"],
+    "requiresBilingual": true
+  }
+}

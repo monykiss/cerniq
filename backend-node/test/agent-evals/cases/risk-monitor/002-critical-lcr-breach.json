@@ -1,0 +1,14 @@
+{
+  "id": "rm-002",
+  "name": "Critical LCR breach — regulatory minimum violated",
+  "agentId": "RISK_MONITOR",
+  "description": "LCR dropped to 94% (below 100% regulatory minimum). HQLA depleted by $3.2M outflow. NSFR still above 100% at 104%. Should produce CRITICAL alert on liquidity with regulatory ref to COSSEC Reg. 8866 and 30-day deadline. Tests that agent correctly escalates regulatory breaches vs policy breaches.",
+  "input": {
+    "institutionId": "golden-inst-004"
+  },
+  "expectedFindings": {
+    "minToolsCalled": 5,
+    "requiredTools": ["getLCR", "getNSFR", "getCapitalAdequacy"],
+    "requiresBilingual": true
+  }
+}

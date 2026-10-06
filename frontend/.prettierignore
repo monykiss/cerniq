@@ -1,0 +1,6 @@
+
+# lib/alm/registry.ts is parsed line-by-line by scripts/verify-alm-registry.mjs,
+# which expects ONE module entry per line. Running prettier over it explodes each
+# entry across many lines and the gate then reports "0 registered / 71 errors"
+# for a file nobody semantically changed. Observed 2026-08-14. Keep it ignored.
+lib/alm/registry.ts

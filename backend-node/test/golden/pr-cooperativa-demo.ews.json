@@ -1,0 +1,196 @@
+{
+  "compositeScore": 100,
+  "alertLevel": "GREEN",
+  "indicators": [
+    {
+      "id": "delinquency_30d",
+      "name": "30-Day Delinquency Rate",
+      "nameEs": "Tasa Morosidad 30 Días",
+      "weight": 12,
+      "value": 1.45,
+      "trend": "improving",
+      "alertLevel": "green",
+      "contribution": 12
+    },
+    {
+      "id": "delinquency_90d",
+      "name": "90-Day Delinquency Rate",
+      "nameEs": "Tasa Morosidad 90 Días",
+      "weight": 15,
+      "value": 0.78,
+      "trend": "improving",
+      "alertLevel": "green",
+      "contribution": 15
+    },
+    {
+      "id": "npl_ratio",
+      "name": "NPL Ratio",
+      "nameEs": "Ratio NPL",
+      "weight": 12,
+      "value": 1.16,
+      "trend": "improving",
+      "alertLevel": "green",
+      "contribution": 12
+    },
+    {
+      "id": "chargeoff_rate",
+      "name": "Charge-Off Rate (4Q)",
+      "nameEs": "Tasa Castigos (4T)",
+      "weight": 10,
+      "value": 0.58,
+      "trend": "improving",
+      "alertLevel": "green",
+      "contribution": 10
+    },
+    {
+      "id": "delinquency_trend",
+      "name": "Delinquency QoQ Change",
+      "nameEs": "Cambio Morosidad T/T",
+      "weight": 10,
+      "value": null,
+      "trend": "stable",
+      "alertLevel": "data_unavailable",
+      "contribution": 0
+    },
+    {
+      "id": "ltv_re",
+      "name": "Avg LTV (RE Loans)",
+      "nameEs": "LTV Promedio (Préstamos RE)",
+      "weight": 8,
+      "value": null,
+      "trend": "stable",
+      "alertLevel": "data_unavailable",
+      "contribution": 0
+    },
+    {
+      "id": "dscr_commercial",
+      "name": "Avg DSCR (Commercial)",
+      "nameEs": "DSCR Promedio (Comercial)",
+      "weight": 5,
+      "value": null,
+      "trend": "stable",
+      "alertLevel": "data_unavailable",
+      "contribution": 0
+    },
+    {
+      "id": "classified_ratio",
+      "name": "Classified Asset Ratio",
+      "nameEs": "Ratio Activos Clasificados",
+      "weight": 8,
+      "value": 1.94,
+      "trend": "improving",
+      "alertLevel": "green",
+      "contribution": 8
+    },
+    {
+      "id": "oreo_growth",
+      "name": "OREO Growth Rate",
+      "nameEs": "Tasa Crecimiento OREO",
+      "weight": 5,
+      "value": null,
+      "trend": "stable",
+      "alertLevel": "data_unavailable",
+      "contribution": 0
+    },
+    {
+      "id": "consumer_60d_delta",
+      "name": "Consumer 60-Day Δ",
+      "nameEs": "Δ Consumo 60 Días",
+      "weight": 5,
+      "value": null,
+      "trend": "stable",
+      "alertLevel": "data_unavailable",
+      "contribution": 0
+    },
+    {
+      "id": "allowance_coverage",
+      "name": "Allowance Coverage",
+      "nameEs": "Cobertura Provisión",
+      "weight": 5,
+      "value": null,
+      "trend": "stable",
+      "alertLevel": "data_unavailable",
+      "contribution": 0
+    },
+    {
+      "id": "peer_delinquency_gap",
+      "name": "Peer Delinquency Gap",
+      "nameEs": "Brecha Morosidad Pares",
+      "weight": 5,
+      "value": null,
+      "trend": "stable",
+      "alertLevel": "data_unavailable",
+      "contribution": 0
+    }
+  ],
+  "topDeteriorating": [],
+  "peerAlert": "Peer comparison unavailable — the peer benchmark feed is not yet wired.",
+  "peerAlertEs": "Comparación con pares no disponible — la fuente de referencia de pares aún no está conectada.",
+  "anomalyScore": 0.3,
+  "status": "ok",
+  "gaps": [
+    {
+      "field": "ews.indicator.delinquency_trend",
+      "reason": "INDICATOR_NOT_WIRED",
+      "severity": "WARNING",
+      "action": "Conecte la fuente de datos para \"Cambio Morosidad T/T\" (indicador aún no instrumentado).",
+      "context": {
+        "indicator": "delinquency_trend"
+      }
+    },
+    {
+      "field": "ews.indicator.ltv_re",
+      "reason": "INDICATOR_NOT_WIRED",
+      "severity": "WARNING",
+      "action": "Conecte la fuente de datos para \"LTV Promedio (Préstamos RE)\" (indicador aún no instrumentado).",
+      "context": {
+        "indicator": "ltv_re"
+      }
+    },
+    {
+      "field": "ews.indicator.dscr_commercial",
+      "reason": "INDICATOR_NOT_WIRED",
+      "severity": "WARNING",
+      "action": "Conecte la fuente de datos para \"DSCR Promedio (Comercial)\" (indicador aún no instrumentado).",
+      "context": {
+        "indicator": "dscr_commercial"
+      }
+    },
+    {
+      "field": "ews.indicator.oreo_growth",
+      "reason": "INDICATOR_NOT_WIRED",
+      "severity": "WARNING",
+      "action": "Conecte la fuente de datos para \"Tasa Crecimiento OREO\" (indicador aún no instrumentado).",
+      "context": {
+        "indicator": "oreo_growth"
+      }
+    },
+    {
+      "field": "ews.indicator.consumer_60d_delta",
+      "reason": "INDICATOR_NOT_WIRED",
+      "severity": "WARNING",
+      "action": "Conecte la fuente de datos para \"Δ Consumo 60 Días\" (indicador aún no instrumentado).",
+      "context": {
+        "indicator": "consumer_60d_delta"
+      }
+    },
+    {
+      "field": "ews.indicator.allowance_coverage",
+      "reason": "INDICATOR_NOT_WIRED",
+      "severity": "WARNING",
+      "action": "Conecte la fuente de datos para \"Cobertura Provisión\" (indicador aún no instrumentado).",
+      "context": {
+        "indicator": "allowance_coverage"
+      }
+    },
+    {
+      "field": "ews.indicator.peer_delinquency_gap",
+      "reason": "INDICATOR_NOT_WIRED",
+      "severity": "WARNING",
+      "action": "Conecte la fuente de datos para \"Brecha Morosidad Pares\" (indicador aún no instrumentado).",
+      "context": {
+        "indicator": "peer_delinquency_gap"
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "alm-008",
+  "name": "Balanced, healthy institution (pass-case)",
+  "agentId": "ALM_DECISION",
+  "description": "Well-managed cooperativa. NII sensitivity within policy. LCR 135%. CAMEL 2. No concentration breaches. Health score should be 80+. Only 1 MEDIUM finding expected — this tests that the agent does not fabricate risks.",
+  "input": {
+    "balanceSheetId": "golden-008",
+    "institutionId": "golden-inst-002"
+  },
+  "expectedFindings": {
+    "topRiskDomain": null,
+    "healthScoreRange": [80, 100],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm"],
+    "requiresBilingual": false
+  }
+}

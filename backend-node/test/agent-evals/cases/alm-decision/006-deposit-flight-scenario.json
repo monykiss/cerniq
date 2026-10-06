@@ -1,0 +1,18 @@
+{
+  "id": "alm-006",
+  "name": "Deposit flight — checking accounts declining 12% QoQ",
+  "agentId": "ALM_DECISION",
+  "description": "Non-maturity deposits (checking + savings) declining rapidly. Deposit beta on checking is 0.78 (high rate sensitivity). NSFR dropping toward 100%. Funding concentration in brokered CDs increasing. Tests agent's ability to detect funding risk even when LCR is still above minimum.",
+  "input": {
+    "balanceSheetId": "golden-006",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "topRiskDomain": "Liquidity Risk",
+    "healthScoreRange": [45, 65],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "getLCR", "getDepositBeta"],
+    "requiresBilingual": false
+  }
+}

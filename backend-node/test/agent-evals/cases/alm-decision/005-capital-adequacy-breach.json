@@ -1,0 +1,18 @@
+{
+  "id": "alm-005",
+  "name": "Capital adequacy — net worth ratio approaching undercapitalized",
+  "agentId": "ALM_DECISION",
+  "description": "Net worth ratio 6.2% (below 7.0% well-capitalized, above 6.0% adequately-capitalized). Declining 40bps QoQ. RBC ratio thin at 10.8%. Retained earnings negative. Tests that agent escalates capital as urgent when trending toward PCA action threshold.",
+  "input": {
+    "balanceSheetId": "golden-005",
+    "institutionId": "golden-inst-001"
+  },
+  "expectedFindings": {
+    "topRiskDomain": "Capital Adequacy",
+    "healthScoreRange": [35, 55],
+    "hasDollarQuantification": true,
+    "minToolsCalled": 6,
+    "requiredTools": ["runFullSwarm", "getCapitalAdequacy"],
+    "requiresBilingual": true
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "category": "asset",
+    "subcategory": "prestamos_personales",
+    "name": "Préstamos Auto y Personal",
+    "balance": 75,
+    "rate": 8.50,
+    "duration": 3.0,
+    "rateType": "fixed"
+  },
+  {
+    "category": "asset",
+    "subcategory": "prestamos_hipotecarios",
+    "name": "Préstamos Hipotecarios",
+    "balance": 90,
+    "rate": 6.25,
+    "duration": 12.0,
+    "rateType": "fixed"
+  },
+  {
+    "category": "asset",
+    "subcategory": "prestamos_comerciales",
+    "name": "Préstamos Comerciales",
+    "balance": 25,
+    "rate": 9.00,
+    "duration": 2.0,
+    "rateType": "variable"
+  },
+  {
+    "category": "asset",
+    "subcategory": "inversiones",
+    "name": "Bonos e Inversiones",
+    "balance": 40,
+    "rate": 4.50,
+    "duration": 3.5,
+    "rateType": "fixed"
+  },
+  {
+    "category": "asset",
+    "subcategory": "efectivo_equivalentes",
+    "name": "Efectivo y Equivalentes",
+    "balance": 20,
+    "rate": 5.25,
+    "duration": 0.1,
+    "rateType": "variable"
+  },
+  {
+    "category": "liability",
+    "subcategory": "ahorros_socios",
+    "name": "Ahorros de Socios",
+    "balance": 85,
+    "rate": 1.75,
+    "duration": 0.3,
+    "rateType": "variable"
+  },
+  {
+    "category": "liability",
+    "subcategory": "certificados_accion",
+    "name": "Certificados de Acción",
+    "balance": 55,
+    "rate": 4.50,
+    "duration": 1.2,
+    "rateType": "fixed"
+  },
+  {
+    "category": "liability",
+    "subcategory": "cuentas_corrientes",
+    "name": "Cuentas Corrientes",
+    "balance": 35,
+    "rate": 0.25,
+    "duration": 0.1,
+    "rateType": "variable"
+  },
+  {
+    "category": "liability",
+    "subcategory": "prestamos_externos",
+    "name": "Préstamos FHLB",
+    "balance": 30,
+    "rate": 5.50,
+    "duration": 2.0,
+    "rateType": "fixed"
+  },
+  {
+    "category": "liability",
+    "subcategory": "depositos_a_plazo",
+    "name": "Depósitos a Plazo",
+    "balance": 20,
+    "rate": 3.80,
+    "duration": 0.8,
+    "rateType": "fixed"
+  }
+]
