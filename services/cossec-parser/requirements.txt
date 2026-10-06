@@ -2,19 +2,19 @@
 # Python 3.11+
 
 # Web framework
-fastapi>=0.104.0
-uvicorn[standard]>=0.24.0
+fastapi>=0.142.2
+uvicorn[standard]>=0.54.0
 
 # File upload handling
 python-multipart
 
 # PDF extraction
-PyMuPDF>=1.23.0
+PyMuPDF>=1.28.2
 
 # Data validation
-pydantic>=2.5.0
+pydantic>=2.13.5
 
 # Testing
-pytest>=7.4.0
-pytest-asyncio>=0.23.0
-httpx>=0.26.0
+pytest>=9.1.1
+pytest-asyncio>=1.4.0
+httpx>=0.28.1
