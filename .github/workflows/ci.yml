@@ -38,7 +38,10 @@ jobs:
       - name: Build
         run: npm run build
       - name: Unit tests
-        run: npm test -- --ci
+        # All suites pass in ~150s; a leaked handle (likely a timer or client in
+        # one suite) keeps Jest alive afterwards. forceExit ends the run until
+        # that handle is found with --detectOpenHandles.
+        run: npm test -- --ci --forceExit
 
   frontend:
     name: frontend (lint, typecheck, unit tests)
